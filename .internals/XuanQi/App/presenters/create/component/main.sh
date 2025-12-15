@@ -30,8 +30,8 @@ if [ ! -d "$XUANQI_PATH_COMPONENTS" ]; then
 fi
 
 if [ ! -d "$XUANQI_PATH_COMPONENTS" ]; then
-        ## try from .internals/ neighbour
-        XUANQI_PATH_COMPONENTS="${XUANQI_PATH_ROOT%/}/${XUANQI_DIRECTORY_COMPONENTS#/}"
+        ## try from App/ neighbour
+        XUANQI_PATH_COMPONENTS="${XUANQI_PATH_ROOT%/*}/${XUANQI_DIRECTORY_COMPONENTS#/}"
 fi
 
 if [ ! -d "$XUANQI_PATH_COMPONENTS" ]; then
@@ -42,7 +42,8 @@ fi
 
 ## formulate target path
 XUANQI_COMPONENT_PATH=""
-if [ -d "$XUANQI_PATH_COMPONENTS" ]; then
+if [ ! "$XUANQI_PATH_COMPONENTS" = "" ] &&
+[ -d "$XUANQI_PATH_COMPONENTS" ]; then
         XUANQI_COMPONENT_PATH="${4##"${PROJECT_PATH_ROOT}"}"
         XUANQI_COMPONENT_PATH="${XUANQI_COMPONENT_PATH#/}"
         XUANQI_COMPONENT_PATH="${XUANQI_COMPONENT_PATH##"${XUANQI_DIRECTORY_COMPONENTS}"}"

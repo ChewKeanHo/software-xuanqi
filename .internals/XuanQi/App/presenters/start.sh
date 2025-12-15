@@ -19,10 +19,12 @@
 
 # initialize $XUANQI_PATH_ROOT
 XUANQI_PATH_CURRENT="$PWD"
-if [ -f "${PWD}/presenters/start.sh" ]; then
+if [ -f "${PWD}/.internals/XuanQi/App/presenters/start.sh" ]; then
+        XUANQI_PATH_ROOT="${PWD}/.internals/XuanQi/App"
+elif [ -f "${PWD}/presenters/start.sh" ]; then
         XUANQI_PATH_ROOT="$PWD"
-elif [ -f "${PWD}/.internals/presenters/start.sh" ]; then
-        XUANQI_PATH_ROOT="${PWD}/.internals"
+elif [ -f "${PWD}/App/presenters/start.sh" ]; then
+        XUANQI_PATH_ROOT="${PWD}/App"
 elif [ -f "start.sh" ]; then
         XUANQI_PATH_ROOT="${PWD%/*}" # get out of 'presenters/'
 elif [ "${0##*/}" = "$XUANQI_SCRIPT_START" ] ||
@@ -53,7 +55,7 @@ E: \$XUANQI_PATH_ROOT -> ??? <- XuanQi Dev!!!
 
                 XUANQI_PATH_ROOT="${XUANQI_PATH_ROOT%/}/${____pathing%%/*}"
                 ____pathing="${____pathing#*/}"
-                if [ -f ".internals/presenters/start.sh" ]; then
+                if [ -f "App/presenters/start.sh" ]; then
                         break
                 fi
         done
@@ -235,15 +237,15 @@ $(\
         ____pathing="${____pathing#*/}"
         if [ -f "${PROJECT_PATH_ROOT}/.git/config" ]; then
                 break
-        fi
+       fi
 done
 unset ____pathing ____previous
 
 
 
 
-# ensure safe operation outside local .internals directory
-if [ ! "${XUANQI_PATH_ROOT%".internals"}" = "$XUANQI_PATH_ROOT" ] &&
+# ensure safe operation outside local App directory
+if [ ! "${XUANQI_PATH_ROOT%"App"}" = "$XUANQI_PATH_ROOT" ] &&
 [ "$PWD" = "$XUANQI_PATH_ROOT" ]; then
         interactors_print_error "\
 $(interactors_print_responses_errors_inside_internals_directory)
@@ -283,8 +285,8 @@ case "$1" in
         fi
 
         if [ ! -d "$XUANQI_PATH_CONFIGS" ] &&
-        [ ! "${XUANQI_PATH_ROOT%"/.internals"}" = "$XUANQI_PATH_ROOT" ]; then
-                # try as .internals/ neighbour
+        [ ! "${XUANQI_PATH_ROOT%"/App"}" = "$XUANQI_PATH_ROOT" ]; then
+                # still not found - try as  App/ neighbour
                 XUANQI_PATH_CONFIGS="${XUANQI_PATH_ROOT%/*}/${XUANQI_DIRECTORY_CONFIGS}"
         fi
 

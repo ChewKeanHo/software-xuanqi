@@ -10,31 +10,44 @@ REM ############################################################################
 REM # Windows BATCH Codes                                                      #
 REM ############################################################################
 REM execute
-IF EXIST "%CD%\.internals\presenters\start.ps1" (
-    powershell ^
-        -ExecutionPolicy Bypass ^
-        -Command ^
-        ". '%CD%\.internals\presenters\start.ps1'; exit `$LASTEXITCODE" ^
-        %*
-    EXIT /B %ERRORLEVEL%
+IF EXIST "%CD%\.internals\XuanQi\App\presenters\start.ps1" (
+        REM likely in root repository
+        powershell ^
+                -ExecutionPolicy Bypass ^
+                -Command ^
+                ". '%CD%\.internals\XuanQi\App\presenters\start.ps1'; exit `$LASTEXITCODE" ^
+                %*
+        EXIT /B %ERRORLEVEL%
+)
+
+IF EXIST "%CD%\App\presenters\start.ps1" (
+        REM inside '.internals\XuanQi'
+        powershell ^
+                -ExecutionPolicy Bypass ^
+                -Command ^
+                ". '%CD%\App\presenters\start.ps1'; exit `$LASTEXITCODE" ^
+                %*
+        EXIT /B %ERRORLEVEL%
 )
 
 IF EXIST "%CD%\presenters\start.ps1" (
-    powershell ^
-        -ExecutionPolicy Bypass ^
-        -Command ^
-        ". '%CD%\presenters\start.ps1'; exit `$LASTEXITCODE" ^
-        %*
-    EXIT /B %ERRORLEVEL%
+        REM inside '.internals\XuanQi\App'
+        powershell ^
+                -ExecutionPolicy Bypass ^
+                -Command ^
+                ". '%CD%\presenters\start.ps1'; exit `$LASTEXITCODE" ^
+                %*
+        EXIT /B %ERRORLEVEL%
 )
 
 IF EXIST "%PROGRAMFILES%\chewkeanho\xuanqi\presenters\start.ps1" (
-    powershell ^
-        -ExecutionPolicy Bypass ^
-        -Command ^
-        ". '%PROGRAMFILES%\chewkeanho\xuanqi\presenters\start.ps1'; exit `$LASTEXITCODE" ^
-        %*
-    EXIT /B %ERRORLEVEL%
+        REM look for installed application
+        powershell ^
+                -ExecutionPolicy Bypass ^
+                -Command ^
+                ". '%PROGRAMFILES%\chewkeanho\xuanqi\presenters\start.ps1'; exit `$LASTEXITCODE" ^
+                %*
+        EXIT /B %ERRORLEVEL%
 )
 
 
@@ -59,31 +72,31 @@ echo \" <<'RUN_AS_POWERSHELL' >/dev/null # " | Out-Null
 # Windows POWERSHELL Codes                                                     #
 ################################################################################
 # execute
-if (Test-Path "$(Get-Location)\.internals\presenters\start.ps1") {
-        $_process = . "$(Get-Location)\.internals\presenters\start.ps1" $args
+if (Test-Path "$(Get-Location)\.internals\XuanQi\App\presenters\start.ps1") {
+        # likely in root repository
+        $_process = . "$(Get-Location)\.internals\XuanQi\App\presenters\start.ps1" $args
         exit $_process
-}
-
-if (Test-Path "$(Get-Location)\presenters\start.ps1") {
+} elseif (Test-Path "$(Get-Location)\App\presenters\start.ps1") {
+        # inside '.internals\XuanQi'
+        $_process = . "$(Get-Location)\App\presenters\start.ps1" $args
+        exit $_process
+} elseif (Test-Path "$(Get-Location)\presenters\start.ps1") {
+        # inside '.internals\XuanQi\App'
         $_process = . "$(Get-Location)\presenters\start.ps1" $args
         exit $_process
-}
-
-if (Test-Path "${env:PROGRAMFILES}\chewkeanho\xuanqi\presenters\start.ps1") {
+} elseif (Test-Path "${env:PROGRAMFILES}\chewkeanho\xuanqi\presenters\start.ps1") {
+        # look for installed application
         $_process = . "${env:PROGRAMFILES}\chewkeanho\xuanqi\presenters\start.ps1" $args
         exit $_process
-}
-
-
-
-
-# fail the default run
-$null = Write-Error @"
+} else {
+        # fail the default run
+        $null = Write-Error @"
 E: Failed to Locate Init File.
 E: Contact Developer|Maintainer.
 E: Bailing Out...
 
 "@
+}
 ################################################################################
 # Windows POWERSHELL Codes                                                     #
 ################################################################################
@@ -98,31 +111,30 @@ RUN_AS_POWERSHELL
 # Unix Main Codes                                                              #
 ################################################################################
 # execute
-if [ -f "${PWD}/presenters/start.sh" ]; then
+if [ -f "${PWD}/.internals/XuanQi/App/presenters/start.sh" ]; then
+        # likely in root repository
+        . "${PWD}/.internals/XuanQi/App/presenters/start.sh" "$@"
+        exit $?
+elif [ -f "${PWD}/App/presenters/start.sh" ]; then
+        # inside '.internals/XuanQi'
+        . "${PWD}/App/presenters/start.sh" "$@"
+        exit $?
+elif [ -f "${PWD}/presenters/start.sh" ]; then
+        # inside '.internals/XuanQi/App'
         . "${PWD}/presenters/start.sh" "$@"
         exit $?
-fi
-
-if [ -f "${PWD}/.internals/presenters/start.sh" ]; then
-        . "${PWD}/.internals/presenters/start.sh" "$@"
-        exit $?
-fi
-
-if [ -f "/usr/local/lib/chewkeanho/xuanqi/presenters/start.sh" ]; then
+elif [ -f "/usr/local/lib/chewkeanho/xuanqi/presenters/start.sh" ]; then
+        # look for installed application
         . "/usr/local/lib/chewkeanho/xuanqi/presenters/start.sh" "$@"
         exit $?
-fi
-
-
-
-
-# fail the default run
-1>&2 printf "%s" "\
+else
+        1>&2 printf "%s" "\
 E: Failed to Locate Init File.
 E: Contact Developer|Maintainer.
 E: Bailing Out...
 
 "
+fi
 ################################################################################
 # Unix Main Codes                                                              #
 ################################################################################
