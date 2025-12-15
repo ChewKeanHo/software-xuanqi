@@ -1,23 +1,23 @@
 # (Holloway) Chew, Kean Ho's XuanQi
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
 **(uk) Yкраїнська** |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *Приборкайте хаос виробництва контенту.*
 
@@ -39,7 +39,7 @@
 
 ## Чому це важливо
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Цей проект був створений з потреби повернути контроль та простоту у
 виробництві контенту:
@@ -66,7 +66,7 @@
 
 ## Основні можливості
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 СюаньЦі наразі здатний обробляти різноманітні завдання, пов'язані з генерацією
 контенту. Давайте розглянемо їх!
@@ -111,10 +111,10 @@
 
 ## Ліцензія
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Весь цей проект ліцензовано за
-[(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt). Нижче наведено
+[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt). Нижче наведено
 деталі продукту:
 
 | Пункт         | Значення                                           |
@@ -130,7 +130,7 @@
 
 ## Підтримайте Розробників
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 По-перше, **дякуємо вам за використання цього проекту та за бажання його
 підтримати**.
@@ -145,4 +145,4 @@
 
 Поточний головний розробник і супроводжуючий.
 
-[![XuanQi](src/buttons/animated-sponsor-button-uk_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=en&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-uk_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=en&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

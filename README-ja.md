@@ -1,23 +1,23 @@
 # 周健豪·玄器
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
 **(ja) 日本語](README-ja.md** |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *コンテンツ生産の混沌を制御する。*
 
@@ -37,7 +37,7 @@
 
 ## 核心理念
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 このプロジェクトは、コンテンツ生産の制御権とシンプルさを取り戻す必要性から生
 まれました：
@@ -62,7 +62,7 @@
 
 ## 主な機能
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 玄器は現在、様々なコンテンツ生成関連のタスクを処理できます。一つずつ詳しく見
 ていきましょう！
@@ -105,10 +105,10 @@
 
 ## ライセンス
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 この完全なプロジェクトは、
-[(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt)のもとでライセンスさ
+[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt)のもとでライセンスさ
 れています。以下は製品の詳細です：
 
 | 項目       | 値                                                 |
@@ -124,7 +124,7 @@
 
 ## メンテナをサポート
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 まず第一に、**このプロジェクトをご利用いただき、サポートをご検討いただきありがと
 うございます。**
@@ -138,4 +138,4 @@
 
 現在の主要開発者およびメンテナ。
 
-[![XuanQi](src/buttons/animated-sponsor-button-ja_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ja&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-ja_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ja&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

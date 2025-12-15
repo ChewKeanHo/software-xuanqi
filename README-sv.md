@@ -1,23 +1,23 @@
 # (Holloway) Chew, Kean Ho's XuanQi
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
 **(sv) Svenska** |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *Tämj kaoset i innehållsproduktion.*
 
@@ -39,7 +39,7 @@ kritiska beroenden eller äventyra framtida utveckling.
 
 ## Kärnidé
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Detta projekt härrör från behovet av att återta kontroll och enkelhet i
 innehållsproduktion:
@@ -65,7 +65,7 @@ innehållsproduktion:
 
 ## Huvudfunktioner
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 XuanQi kan för närvarande hantera olika uppgifter relaterade till
 innehållsgenerering. Låt oss utforska dem en efter en!
@@ -110,10 +110,10 @@ innehållsgenerering. Låt oss utforska dem en efter en!
 
 ## Licens
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Hela detta projekt är licensierat under
-[(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt). Följande är
+[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt). Följande är
 produktdetaljer:
 
 | Ämne                 | Värde                                                |
@@ -129,7 +129,7 @@ produktdetaljer:
 
 ## Stöd Underhållarna
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Först och främst,
 **tack för att du använder detta projekt och tack för att du vill stödja det**.
@@ -144,4 +144,4 @@ underhållarna:
 
 Nuvarande huvudsakliga utvecklare och underhållare.
 
-[![XuanQi](src/buttons/animated-sponsor-button-sv_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=sv&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-sv_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=sv&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

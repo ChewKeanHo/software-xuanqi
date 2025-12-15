@@ -1,23 +1,23 @@
 # (Holloway) Chew, Kean Ho's XuanQi
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
 **(ko) 한국어** |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *콘텐츠 생산의 혼란을 길들이다.*
 
@@ -39,7 +39,7 @@ XuanQi는 일관성, 분산된 공급망, 단순함의 원칙을 기반으로 �
 
 ## 주요 기능
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 XuanQi는 현재 다양한 콘텐츠 생성 관련 작업을 처리할 수 있습니다. 하나씩 자
 세히 알아보겠습니다!
@@ -82,9 +82,9 @@ XuanQi는 현재 다양한 콘텐츠 생성 관련 작업을 처리할 수 있�
 
 ## 라이선스
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
-이 전체 프로젝트는 [(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt)
+이 전체 프로젝트는 [(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt)
 에 따라 라이선스가 부여됩니다. 제품 세부 사항은 다음과 같습니다:
 
 | 항목       | 값                                                 |
@@ -100,7 +100,7 @@ XuanQi는 현재 다양한 콘텐츠 생성 관련 작업을 처리할 수 있�
 
 ## Maintainer 지원하기
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 첫째로, **이 프로젝트를 사용해 주시고 지원을 고려해 주셔서 감사합니다**.
 
@@ -113,4 +113,4 @@ XuanQi는 현재 다양한 콘텐츠 생성 관련 작업을 처리할 수 있�
 
 현재 주요 개발자이자 Maintainer입니다.
 
-[![XuanQi](src/buttons/animated-sponsor-button-ko_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ko&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-ko_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ko&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

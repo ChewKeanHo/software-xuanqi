@@ -1,23 +1,23 @@
 # (Holloway) Chew, Kean Ho's XuanQi
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
 **(mn-Cyrl) Монгол** |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *Контентын Үйлдвэрлэлийн Эмх замбараагүй Байдлыг Тайвшруул.*
 
@@ -41,7 +41,7 @@ XuanQi нь хүчирхэг хувилбарыг санал болгодог: �
 
 ## Гол Үзэл Санаа
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Энэ төсөл нь контентын үйлдвэрлэлд хяналт, хялбар байдлыг эргүүлэн авах
 хэрэгцээнээс үүдэлтэй:
@@ -67,7 +67,7 @@ XuanQi нь хүчирхэг хувилбарыг санал болгодог: �
 
 ## Гол Онцлог шинж чанарууд
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 XuanQi нь одоогоор контентын үүсгэлттэй холбоотой төрөл бүрийн даалгавруудыг
 гүйцэтгэх чадвартай. Тэдгээрийг нэг нэгээр нь судалж үзье!
@@ -111,9 +111,9 @@ XuanQi нь одоогоор контентын үүсгэлттэй холбо�
 
 ## Лиценз
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
-Энэхүү бүтэн төсөл нь [(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt)
+Энэхүү бүтэн төсөл нь [(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt)
 лицензийн дор лицензлагдсан. Бүтээгдэхүүний дэлгэрэнгүй мэдээлэл дараах
 байдалтай байна:
 
@@ -130,7 +130,7 @@ XuanQi нь одоогоор контентын үүсгэлттэй холбо�
 
 ## Хөгжүүлэгчдийг Дэмжих
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Юуны өмнө, **энэ төслийг ашиглаж, дэмжиж байгаад баярлалаа**.
 
@@ -142,4 +142,4 @@ XuanQi нь одоогоор контентын үүсгэлттэй холбо�
 
 Одоогийн үндсэн хөгжүүлэгч, засвар үйлчилгээг хариуцдаг хүн.
 
-[![XuanQi](src/buttons/animated-sponsor-button-mn-Cyrl_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=en&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-mn-Cyrl_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=en&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

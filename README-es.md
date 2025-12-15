@@ -1,23 +1,23 @@
 # (Holloway) Chew, Kean Ho's XuanQi
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
 **(es) Español** |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *Domina el Caos de la Producción de Contenidos.*
 
@@ -40,7 +40,7 @@ futuro.
 
 ## Por qué es importante
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Este proyecto nace de la necesidad de recuperar el control y la simplicidad
 en la producción de contenidos:
@@ -67,7 +67,7 @@ en la producción de contenidos:
 
 ## Características Principales
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 XuanQi es actualmente capaz de manejar diversas tareas relacionadas con la
 generación de contenido. ¡Explorémoslas una por una!
@@ -115,10 +115,10 @@ generación de contenido. ¡Explorémoslas una por una!
 
 ## Licencia
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Este proyecto completo está bajo la
-[(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt). Los detalles del
+[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt). Los detalles del
 producto son los siguientes:
 
 | Asunto              | Valor                                              |
@@ -134,7 +134,7 @@ producto son los siguientes:
 
 ## Apoya a los Mantenedores
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 En primer lugar, **gracias por usar este proyecto y por considerar apoyarlo**.
 
@@ -148,4 +148,4 @@ los mantenedores:
 
 Desarrollador principal y mantenedor actual.
 
-[![XuanQi](src/buttons/animated-sponsor-button-es_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=es&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-es_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=es&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

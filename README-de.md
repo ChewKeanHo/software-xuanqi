@@ -1,23 +1,23 @@
 # (Holloway) Chew, Kean Ho's XuanQi
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
 **(de) Deutsch** |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *Bändigen Sie das Chaos der Content-Produktion.*
 
@@ -39,7 +39,7 @@ Abhängigkeiten einzuführen oder die zukünftige Entwicklung zu gefährden.
 
 ## Warum es wichtig ist
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Dieses Projekt entstand aus der Notwendigkeit, Kontrolle und Einfachheit in
 der Content-Produktion zurückzugewinnen:
@@ -66,7 +66,7 @@ der Content-Produktion zurückzugewinnen:
 
 ## Hauptfunktionen
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 XuanQi ist in der Lage, verschiedene auf Inhaltserstellung bezogene Aufgaben
 zu bewältigen. Lassen Sie uns einen genaueren Blick darauf werfen!
@@ -114,10 +114,10 @@ zu bewältigen. Lassen Sie uns einen genaueren Blick darauf werfen!
 
 ## Lizenz
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Dieses gesamte Projekt ist unter der
-[(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt) lizenziert. Hier
+[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt) lizenziert. Hier
 sind die Produktdetails:
 
 | Gegenstand    | Wert                                               |
@@ -133,7 +133,7 @@ sind die Produktdetails:
 
 ## Unterstützen Sie die Maintainer
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Zunächst einmal: **Vielen Dank, dass Sie dieses Projekt nutzen und erwägen, es
 zu unterstützen.**
@@ -148,4 +148,4 @@ die Maintainer direkt zu unterstützen:
 
 Aktueller Hauptentwickler und Maintainer.
 
-[![XuanQi](src/buttons/animated-sponsor-button-de_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=de&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-de_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=de&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

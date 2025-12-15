@@ -1,23 +1,23 @@
 # Xuan Qi (Holloway) Chew, Kean Ho
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
 **(ms) Bahasa Melayu** |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *Kawal Kekacauan Pengeluaran Kandungan.*
 
@@ -40,7 +40,7 @@ menjejaskan pembangunan masa hadapan.
 
 ## Falsafah Teras
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Projek ini dilahirkan daripada keperluan untuk mendapatkan semula kawalan dan
 kesederhanaan dalam pengeluaran kandungan:
@@ -68,7 +68,7 @@ kesederhanaan dalam pengeluaran kandungan:
 
 ## Ciri-ciri Utama
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 XuanQi kini mampu mengendalikan pelbagai tugas yang berkaitan dengan penjanaan
 kandungan. Jom kita terokai satu persatu!
@@ -113,10 +113,10 @@ kandungan. Jom kita terokai satu persatu!
 
 ## Lesen
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Keseluruhan projek ini dilesenkan di bawah
-[Lesen Liberal (Holloway) Chew, Kean Ho](LICENSE.txt). Berikut adalah butiran
+[Lesen Liberal (Holloway) Chew, Kean Ho](/LICENSE.txt). Berikut adalah butiran
 produk:
 
 | Subjek                  | Nilai                                              |
@@ -132,7 +132,7 @@ produk:
 
 ## Sokong Penyelenggara
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Pertama sekali, **terima kasih kerana menggunakan projek ini dan terima kasih
 kerana berminat untuk menyokongnya.**
@@ -147,4 +147,4 @@ secara langsung:
 
 Pembangun dan penyelenggara aplikasi utama semasa.
 
-[![XuanQi](src/buttons/animated-sponsor-button-ms_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ms&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-ms_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ms&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

@@ -1,23 +1,23 @@
 # (Holloway) Chew, Kean Ho's XuanQi
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
 **(ru) Pусский** |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](README-zh-Hant.md)
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
+[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
 
 *Укротите хаос производства контента.*
 
@@ -39,7 +39,7 @@ XuanQi предлагает мощную альтернативу: высоко�
 
 ## Почему это важно
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Этот проект был создан из потребности вернуть контроль и простоту в
 производство контента:
@@ -64,7 +64,7 @@ XuanQi предлагает мощную альтернативу: высоко�
 
 ## Основные возможности
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 XuanQi в настоящее время способен обрабатывать различные задачи,
 связанные с генерацией контента. Давайте подробно их рассмотрим!
@@ -112,10 +112,10 @@ XuanQi в настоящее время способен обрабатыват�
 
 ## Лицензия
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Весь этот проект лицензирован в соответствии с
-[(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt)
+[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt)
 Ниже приведены детали продукта:
 
 
@@ -132,7 +132,7 @@ XuanQi в настоящее время способен обрабатыват�
 
 ## Поддержите Сопровождающих
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 Прежде всего,
 **спасибо за использование этого проекта и за вашу готовность его поддержать.**
@@ -147,4 +147,4 @@ XuanQi в настоящее время способен обрабатыват�
 
 Текущий основной разработчик и сопровождающий.
 
-[![XuanQi](src/buttons/animated-sponsor-button-ru_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ru&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-ru_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=ru&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)

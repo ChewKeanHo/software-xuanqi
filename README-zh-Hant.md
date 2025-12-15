@@ -1,22 +1,22 @@
 # 周健豪·玄器
 
-[![XuanQi](src/icons/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
 
-[(de) Deutsch](README-de.md) |
-[(en) English](README.md) |
-[(es) Español](README-es.md) |
-[(fr) Français](README-fr.md) |
-[(ja) 日本語](README-ja.md) |
-[(ko) 한국어 | 조선어](README-ko.md) |
-[(mn-Cyrl) Монгол](README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](README-ms.md) |
-[(nb) Norsk Bokmål](README-nb.md) |
-[(nl) Nederlands](README-nl.md) |
-[(nn) Norsk Nynorsk](README-nn.md) |
-[(ru) Pусский](README-ru.md) |
-[(sv) Svenska](README-sv.md) |
-[(uk) Yкраїнська](README-uk.md) |
-[(zh-Hans) 华语（简体）](README-zh-Hans.md) |
+[(de) Deutsch](/README-de.md) |
+[(en) English](/README.md) |
+[(es) Español](/README-es.md) |
+[(fr) Français](/README-fr.md) |
+[(ja) 日本語](/README-ja.md) |
+[(ko) 한국어 | 조선어](/README-ko.md) |
+[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
+[(ms) Bahasa Melayu](/README-ms.md) |
+[(nb) Norsk Bokmål](/README-nb.md) |
+[(nl) Nederlands](/README-nl.md) |
+[(nn) Norsk Nynorsk](/README-nn.md) |
+[(ru) Pусский](/README-ru.md) |
+[(sv) Svenska](/README-sv.md) |
+[(uk) Yкраїнська](/README-uk.md) |
+[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
 **(zh-Hant) 華語（繁體）**
 
 *駕馭內容生產的混沌。*
@@ -35,7 +35,7 @@
 
 ## 核心理念
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 此項目源於重獲內容生產控制權與簡潔性的需求：
 
@@ -54,7 +54,7 @@
 
 ## 主要特性
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 玄器目前能夠處理各種與內容生成相關的任務。讓我們一一探討究竟！
 
@@ -87,9 +87,9 @@
 
 ## 許可證
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
-此完整項目根據[(Holloway) Chew, Kean Ho's Liberal License](LICENSE.txt)授權。
+此完整項目根據[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt)授權。
 以下是產品詳情：
 
 | 項目       | 值                                                 |
@@ -105,7 +105,7 @@
 
 ## 支持維護者
 
-[![XuanQi](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
 
 首先，**感謝您使用此項目，並感謝您有意支持它**。
 
@@ -118,4 +118,4 @@
 
 當前的主要開發者和維護者。
 
-[![XuanQi](src/buttons/animated-sponsor-button-zh-Hant_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=zh&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+[![button](/.internals/buttons/animated-sponsor-button-zh-Hant_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=zh&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
