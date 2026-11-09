@@ -1,11 +1,8 @@
 # Contributor Covenant Code of Conduct
 
-
-
-
 ## Our Pledge
 
-[![Contributor Covenant Code of Conduct](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 We as members, contributors, and leaders pledge to make participation in our
 community a harassment-free experience for everyone, regardless of age, body
@@ -22,7 +19,7 @@ diverse, inclusive, and healthy community.
 
 ## Our Standards
 
-[![Contributor Covenant Code of Conduct](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 Examples of behavior that contributes to a positive environment for our
 community include:
@@ -51,7 +48,7 @@ Examples of unacceptable behavior include:
 
 ## Enforcement Responsibilities
 
-[![Contributor Covenant Code of Conduct](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 Community leaders are responsible for clarifying and enforcing our standards of
 acceptable behavior and will take appropriate and fair corrective action in
@@ -68,7 +65,7 @@ decisions when appropriate.
 
 ## Scope
 
-[![Contributor Covenant Code of Conduct](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 This Code of Conduct applies within all community spaces, and also applies when
 an individual is officially representing the community in public spaces.
@@ -81,7 +78,7 @@ representative at an online or offline event.
 
 ## Enforcement
 
-[![Contributor Covenant Code of Conduct](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement by raising a
@@ -96,10 +93,12 @@ reporter of any incident.
 
 ## Enforcement Guidelines
 
-[![Contributor Covenant Code of Conduct](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 Community leaders will follow these Community Impact Guidelines in determining
 the consequences for any action they deem in violation of this Code of Conduct:
+
+
 
 ### 1. Correction
 
@@ -109,6 +108,8 @@ unprofessional or unwelcome in the community.
 **Consequence**: A private, written warning from community leaders, providing
 clarity around the nature of the violation and an explanation of why the
 behavior was inappropriate. A public apology may be requested.
+
+
 
 ### 2. Warning
 
@@ -122,6 +123,8 @@ includes avoiding interactions in community spaces as well as external channels
 like social media. Violating these terms may lead to a temporary or permanent
 ban.
 
+
+
 ### 3. Temporary Ban
 
 **Community Impact**: A serious violation of community standards, including
@@ -132,6 +135,8 @@ communication with the community for a specified period of time. No public or
 private interaction with the people involved, including unsolicited interaction
 with those enforcing the Code of Conduct, is allowed during this period.
 Violating these terms may lead to a permanent ban.
+
+
 
 ### 4. Permanent Ban
 
@@ -147,7 +152,7 @@ community.
 
 ## Attribution
 
-[![Contributor Covenant Code of Conduct](src/icons/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.1, available at

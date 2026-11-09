@@ -1,147 +1,398 @@
-# (Holloway) Chew, Kean Ho's XuanQi
+# XuanQi (周健豪·玄器) | (Holloway) Chew, Kean Ho's Software
 
-[![banner](/.internals/trademarks/animated-banner_1200x200.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-[(de) Deutsch](/README-de.md) |
-**(en) English** |
-[(es) Español](/README-es.md) |
-[(fr) Français](/README-fr.md) |
-[(ja) 日本語](/README-ja.md) |
-[(ko) 한국어 | 조선어](/README-ko.md) |
-[(mn-Cyrl) Монгол](/README-mn-Cyrl.md) |
-[(ms) Bahasa Melayu](/README-ms.md) |
-[(nb) Norsk Bokmål](/README-nb.md) |
-[(nl) Nederlands](/README-nl.md) |
-[(nn) Norsk Nynorsk](/README-nn.md) |
-[(ru) Pусский](/README-ru.md) |
-[(sv) Svenska](/README-sv.md) |
-[(uk) Yкраїнська](/README-uk.md) |
-[(zh-Hans) 华语（简体）](/README-zh-Hans.md) |
-[(zh-Hant) 華語（繁體）](/README-zh-Hant.md)
-
+```
+      0000000000    0000           0000
+         000 0000                  0000
+     00 000000000   0000            00000
+     00  00000000   0000         00000000000000000000
+     000  0   000   0000  0000000000000000000000000000
+     00000000 000   0000 00000      000  000
+    00 000000 000                 000  00000
+   00         000   0000         0000  00000
+ 00         00000              00000000000
+              00    0000       0000000000
+                               00000000   00
+          00        0000           000   00000
+    00    00000     0000         00000000000000
+   000000000000000  0000         000000000 0000
+  00  0000000       0000          000       00
+00 0 0000000000
+  00   0000000      0000        00000   00000000
+  000000 00000000             000   0000000 0000
+  00 00000000       0000      00   000  00 0000
+  0000  0000000000  0000       0000000  0000000
+  00       0000000             00000 00  0
+      000           0000        0    000 0000
+       0000000      0000            00000000000000
+    0000000                000000000000000000000000
+      00000         0000    000    000 0000
+     000000000000   0000          000   0000000
+  00  0000   00000              0000      00000
+ 00   000000        0000     0000000000000000000000
+    0000000                  000   0000000    00000
+    000000000       0000      00  0000  00   00000
+     0  00  000               0000000   000000000
+      0000          0000      00000     000
+```
 
 *Tame the Chaos of Content Production.*
 
 Dependency hell, brittle toolchains, security concerns, and geopolitical
-complexities — these shouldn't disrupt your workflow. XuanQi offers a
+complexities; These should not disrupt your workflow. XuanQi offers a
 powerful alternative: highly portable software that guarantees reliable,
 consistent reproduction of your content anywhere, anytime, with full
 customizability.
 
-Built on the principles of consistency, decentralized supply chains,
-and simplicity, XuanQi ensures true data sovereignty. Your data and its
+Built on the principles of consistency, decentralized supply chains, and
+simplicity, XuanQi ensures true data sovereignty. Your data and its
 production processor remain reproducible and maintainable, without
 introducing critical dependencies or compromising future development.
+
+Its design principles are:
+
+1. **You Maintain Absolute Control** - No more unexpected changes to terms,
+   conditions, or business policies after you've committed.
+2. **Maximum Customizability** - Build content programmatically, free from
+   restrictive abstract assumptions and vendor lock-in processes.
+3. **Decentralized Supply Chains** - Operate completely free from
+   geopolitical disruptions and unreasonable restrictions.
+4. **Inherently Modular** - Simplify management of external components and
+   resources built with various technologies.
+5. **Reliable Reproducibility** - Reproduce any content reliably anywhere
+   with shell triggers.
+6. **Minimal Learning Cost** - Just reuse your `POSIX Shell` scripting
+   knowledge. No new programming language required.
+7. **Easy Integration** - Integrate with any `CI` using just simple
+   commands.
+
+XuanQi is capable of handling various content generation related tasks in a
+repository. It has:
+
+* **Filesystem Nodes Based Router** - focus on mapping each file/directory
+  node creation instead of technology-specific focused.
+* **Use the Entire Repository** - no need to pre-duplicate resources nodes
+  just to accommodate a specific technology's limitations.
+* **High Customizability** - the routers are POSIX `Shell` scripts so go
+  wild with selecting your techologies and production decisions.
+* **Not Output Restrictions** - it just execute the router shell script and
+  nothing else.
 
 **XuanQi - Just Build The Contents Seamlessly.**
 
 
 
 
-## Core Philosophy
+## Verifying Content Integrity
 
-[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This project was born from the need to regain control and simplicity in content
-production:
+To secure the content from unauthorized modification by anyone down to bit-level
+(`0|1`), they are cryptographically signed using one or more cryptography tools
+such as but not limited to:
 
-1. **You Maintain Absolute Control** - No more unexpected changes to terms,
-   conditions, or business policies after you've committed.
-2. **Maximum Customizability** - Build content programmatically, free from
-   restrictive abstract assumptions and vendor lock-in processes.
-3. **Decentralized Supply Chains** - Operate completely free from geopolitical
-   disruptions and unreasonable restrictions.
-4. **Inherently Modular** - Simplify management of external components and
-   resources built with various technologies.
-5. **Reliable Reproducibility** - Reproduce any content reliably anywhere,
-   anytime — whether it's a single `.pdf` file, an entire static website,
-   web page, images, etc.
-6. **Minimal Learning Cost** - Just reuse your `POSIX Shell` scripting
-   knowledge. No new programming language required.
-7. **Easy Integration** - Integrate with any `CI` using just one simple command.
+* [GnuPG](https://gnupg.org); AND/OR
+* [OpenSSL](https://www.openssl.org/).
+
+The public key and the associated certificate are attached. Only the main owner
+keeps and maintains the private keys. To verify the content's integrity:
 
 
 
+### GnuPG
 
-## Key Features
+1. Install [GnuPG](https://gnupg.org) software if not present.
+2. Download the target file and its detached signature file (the `.asc` file
+   with the same filename).
+3. Download the public key file (`.gpg`).
+4. Place them next to each other in the directory.
+5. Open a terminal and execute the following command:
 
-[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
-
-XuanQi is currently capable of handling various content generation related
-tasks. Let's explore them one by one!
-
+```
+$ gpg --no-default-keyring --keyring /path/to/public.gpg --verify /path/to/file.asc
+```
 
 
-### Static Site Generation (SSG)
 
-* **Use the Entire Codebase** - No need to pre-duplicate file resources just
-  to accommodate an SSG generator's cumbersome limitations.
-* **Seamless Output Structure** - Map entire sites using simple operating
-  system file paths, without complex or proprietary database parsing.
-* **Extremely High Customizability** - Each file is processed by its own `Shell`
-  script, giving you complete freedom to make production decisions.
-* **No Output Restrictions** - No restrictive constraints from internal SSG
-  generators — you and your publishing provider can decide freely.
-* **Integrate Best-in-Class Tools** - No more jack-of-all-trades compromises.
-  Seamlessly incorporate dedicated tools like `GIMP` for image processing and
-  `FFmpeg` for media processing.
-* **Reject "Jack of All Trades, Master of None" Subpar "Features"** - Directly
-  integrate and use specialized tools like GIMP for image processing and
-  FFMPEG for audio and video processing.
-* **Search Engine Optimization (SEO) Assistance** - Meet SEO requirements easily
-  using XuanQi's optional SEO assistance functions.
-* **Progressive Web App (PWA) Assistance** - Use XuanQi's optional PWA
-  assistance functions to easily convert your website into a PWA web app.
-* **WebAssembly (WASM) Assistance** - Use XuanQi's optional WASM integration
-  functions to embed or integrate WASM into your "Super `HTML`".
+### OpenSSL
+
+1. Install [OpenSSL](https://www.openssl.org) software if not present.
+2. Download the target file and its detached signature file (the `.sig`/`.sign`
+   file with the same filename).
+3. Download the public certificate file (`.pem`) containing the public key
+   within.
+4. Place them next to each other in the directory.
+5. Open a terminal and execute the following command:
+
+```
+$ openssl dgst -verify /path/to/pubkey.pem -signature /path/to/file.sig /path/to/file
+```
 
 
 
 
-### Super `HTML`
-* **Zero Dependencies** - All content resources are embedded into a single
-  Super `HTML` file that runs in any environment with a browser.
-* **`PDF` Output Assistance** - Ready to convert "Super `HTML`" to `PDF` using
-  headless browser printing (Note: you need to provide your own print-compliant
-  `CSS` stylesheet).
+## Artificial Intelligence (A.I.) Decrees
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Please refer to [AI_DECREES.md](AI_DECREES.md) for the project's policy on the
+use of Artificial Intelligence.
+
+
+
+
+## Maintainers' Notes
+
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
+
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for contributing &
+maintenances guidelines.
 
 
 
 
 ## License
 
-[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
+[![banner](/.internals/trademarks/banner_1200x100.svg)](#)
 
-This entire project is licensed under
-[(Holloway) Chew, Kean Ho's Liberal License](/LICENSE.txt). The following are
-the product details:
+* [Agreed GIMP License](.internals/terms-of-services/GimpORG-License.pdf)
+* [Agreed GIMP Privacy Policy](.internals/privacy-policy/GimpORG-Privacy-Policy.pdf)
+* [Agreed Inkscape License](.internals/terms-of-services/Inkscape-License.pdf)
+* [Agreed Inkscape Privacy Policy](.internals/privacy-policy/Inkscape-Privacy-Policy.pdf)
 
-| Subject          | Value                                                |
-|:-----------------|:-----------------------------------------------------|
-| Name             | `周健豪·玄器`, `(Holloway) Chew, Kean Ho's XuanQi`   |
-| Nickname         | `玄器`, `XuanQi`                                     |
-| Product UUID     | `A1C8B6B1-CF6F-435B-9ECE-60AA15E7240D`               |
-| Product SKU      | `chewkeanho-xuanqi`                                  |
-| Trademark Holder | `(Holloway) Chew, Kean Ho` (natural person)          |
+This entire repository is licensed under [BSD Zero Clause License](LICENSE.txt).
+To ensure better understanding of this license, the following sub-sections will
+briefly describe how to deploy the content.
 
-
-
-
-## Support the Maintainers
-
-[![banner](/.internals/trademarks/animated-banner_1200x100.svg)](#)
-
-First and foremost, **thank you for using this project and for your willingness
-to support it.**
-
-Although this project is developed and maintained pro-bono, nothing in life is
-truly free. If you like this product, please feel free to support the
-maintainers directly:
+For registered non-profit organizations (NGO), you are considered a
+`Commercial Entity` the same as any for-profit organization by default. However,
+you will be eligible for the NGO disbursement grant and receive exception
+privileges from the creator(s).
 
 
 
-### `(Holloway) Chew, Kean Ho`, Malaysia
+### Attribution
 
-Current principal developer and maintainer.
+This license **DOES NOT** mandate attribution requirement. Unless absolutely
+needed, you may attribute back to the creator(s) as follows:
 
-[![button](/.internals/buttons/animated-sponsor-button-en_80x38.svg)](https://buy.stripe.com/dR614jehR5LfexG5kn?locale=en&__embed_source=buy_btn_1ROCQCIjUIWX3dn3HLHjIqxm)
+```
+Title: (Holloway) Chew, Kean Ho's XuanQi (周健豪·玄器)
+Creators: (Holloway) Chew, Kean Ho
+Packaged-By: (Holloway) Chew, Kean Ho
+Contact: hello@chewkeanho.com
+SKU: chewkeanho-software-xuanqi
+UUID: A1C8B6B1-CF6F-435B-9ECE-60AA15E7240D
+DOI: Coming Soon
+License: BSD Zero Clause License (https://opensource.org/licenses/0BSD)
+Repository Made On: 2025-10-13
+Repository Made From: Malaysia, South East Asia
+Procure: https://github.com/ChewKeanHo/software-xuanqi
+```
+
+
+
+
+### Ownership - Personal
+
+> [!NOTE]
+>
+> This targets any customer wanting to own a copy of the content and then only
+> he/she is using it without sharing with any 3rd-party entity; AND **WITHOUT**
+> any monetary intention such as but not limited to:
+>
+> * Saving a local copy and then viewing via his/her own mobile device(s); OR
+> * Saving a local copy and then viewing via his/her own personal computer; OR
+> * Saving a local copy for artificial intelligence data training purposes.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Ownership - Commercial
+
+> [!NOTE]
+>
+> This targets any customer wanting to own a copy of the content and then only
+> he/she is using it without sharing with any 3rd-party entity; AND **WITH** any
+> monetary intention such as but not limited to:
+>
+> * Saving a local copy for enhancing his/her company's procurement list; OR
+> * Saving a local copy for commercial artificial intelligence data training
+>   purposes.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Reference - Personal & Commercial
+
+> [!NOTE]
+>
+> This targets any customer wanting to refer or to provide a guide for sourcing
+> the original content for any 3rd-party entity **without directly displaying
+> any portion of the original content**; **WITHOUT** any monetary intention such
+> as but not limited to:
+>
+> * Academic research and paper writing; OR
+> * New content creation linking to the original content **WITHOUT displaying
+>   any of the original content** for his/her own streaming platform; OR
+> * Content production and collection linking to original content **WITHOUT
+>   displaying any of the original content**; OR
+> * Web portfolio project linking to the original content **WITHOUT displaying
+>   any of the original content**; OR
+> * Event materials linking the original content **WITHOUT displaying any of the
+>   original content**; OR
+> * Meeting materials linking the original content **WITHOUT displaying any of
+>   the original content**; OR
+> * Advertisement contents linking the original content **WITHOUT displaying any
+>   of the original content**.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Integration - Personal
+
+> [!NOTE]
+>
+> This targets any customer wanting to directly **display portions and NOT ALL**
+> of the original content **as it is OR without any composing remixes or
+> modifications retaining the original intent, art direction and messages** into
+> his/her content creation; **WITHOUT** any monetary intention such as but not
+> limited to:
+>
+> * New content creation with displaying portion(s) of the original content for
+>   his/her own streaming platform **without any monetary gain**; OR
+> * Content production and collection with displaying portion(s) of the original
+>   content **without any monetary gain**; OR
+> * Web portfolio project with displaying portion(s) of the original content
+>   **without any monetary gain**; OR
+> * Event materials with displaying portion(s) of the original content
+>   **without any monetary gain**; OR
+> * Meeting materials with displaying portion(s) of the original content
+>   **without any monetary gain**.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Integration - Commercial
+
+> [!NOTE]
+>
+> This targets any customer wanting to directly **display portions and NOT ALL**
+> of the original content **as it is OR without any composing remixes or
+> modifications retaining the original intent, art direction and messages** into
+> his/her content creation; **WITH** any monetary intention such as but not
+> limited to:
+>
+> * New content creation with displaying portion(s) of the original content for
+>   his/her own streaming platform; OR
+> * Content production and collection with displaying portion(s) of the original
+>   content; OR
+> * Web portfolio project with displaying portion(s) of the original content; OR
+> * Event materials with displaying portion(s) of the original content; OR
+> * Meeting materials with displaying portion(s) of the original content; OR
+> * Advertisement materials with displaying portion(s) of the original content.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Composition Remix - Personal
+
+> [!NOTE]
+>
+> This targets any customer wanting to own and then **modify the original
+> content extensively preserving or altering the original intent, art direction,
+> or message** for composing his/her new content creation; **WITHOUT** any
+> monetary intention such as but not limited to:
+>
+> * New content creation with digitally modified and processed original content
+>   integration for his/her own streaming platform **WITHOUT** any profits
+>   including advertisement commission; OR
+> * Personal content production and collection with digitally modified and
+>   processed original content integration for his/her own streaming platform
+>   **WITHOUT** any profits including advertisement commission; OR
+> * Personal web portfolio project with digitally modified and processed
+>   original content integration for his/her own streaming platform **WITHOUT**
+>   any profits including advertisement commission; OR
+> * Social media meme content creation with digitally modified and processed
+>   original content integration for his/her own streaming platform **WITHOUT**
+>   any profits including advertisement commission.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Composition Remix - Commercial
+
+> [!NOTE]
+>
+> This targets any customer wanting to own and then **modify the original
+> content extensively preserving or altering the original intent, art direction,
+> or message** for composing his/her new content creation; **WITH** any monetary
+> intention such as but not limited to:
+>
+> * New content creation with digitally modified and processed original content
+>   integration for his/her own streaming platform; OR
+> * Personal content production and collection with digitally modified and
+>   processed original content integration for his/her own streaming platform;
+>   OR
+> * Personal web portfolio project with digitally modified and processed
+>   original content integration for his/her own streaming platform; OR
+> * Social media meme content creation with digitally modified and processed
+>   original content integration for his/her own streaming platform.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Broadcast or Resell Redistribution - Personal
+
+> [!NOTE]
+>
+> This targets any customer wanting to share, to broadcast, to re-distribute,
+> to sell, or to re-sell the original, **modified, OR derived** content
+> **WITHOUT** any monetary intention such as but not limited to:
+>
+> * Sharing with family members; OR
+> * Streaming the content via any streaming platform with private viewer
+>   access; OR
+> * Displaying the content in his/her gallery with privately invited guests; OR
+> * Displaying the content in private, free entry open spaces like living room;
+>   OR
+> * Owning a copy of the original content and serving it as downloadable content
+>   on a website in a private network (e.g. self-hosted home network); OR
+> * Sharing the original content across social media or messaging applications
+>   like email or instant messenger.
+
+You are **ALLOWED** without any restriction.
+
+
+
+### Broadcast or Resell Redistribution - Commercial
+
+> [!NOTE]
+>
+> This targets any customer wanting to share, to broadcast, to re-distribute,
+> to sell, or to re-sell the original, **modified, OR derived** content
+> **WITH** any monetary intention such as but not limited to:
+>
+> * Streaming the content via any streaming platform with public or private
+>   viewer access; OR
+> * Displaying the content in any company's public events with free or payable
+>   guest invites; OR
+> * Displaying the content in any company's internal/private events with free or
+>   payable guest invites; OR
+> * Owning a copy of the original content and serving it as free OR payable
+>   downloadable content on his/her website in any network (Internet, Intranet,
+>   or private networks); OR
+> * Sharing the original content across social media or messaging applications
+>   like email or instant messenger; OR
+> * Distributing the original content via multiple profit-earning streaming
+>   platforms.
+
+You are **ALLOWED** without any restriction.
