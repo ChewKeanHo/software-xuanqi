@@ -1,4 +1,4 @@
-#!/bin/sh
+#requires -Version 5.1
 # Copyright 2026 The Automaton Project Team (https://github.com/ChewKeanHo/software-automaton)
 #
 # The above unified aliases have one or more actual legal entities listed
@@ -25,11 +25,65 @@
 
 
 
-# print demo
-$null = Write-Host "Hello World, from 'Prepare'."
+# check XuanQi's health and status
+$null = Write-Host @"
+I: Checking XuanQi's Usability...
+"@
+if (-not (Test-Path -Path ".\.internals\xuanqi\Start.sh.ps1" -PathType Leaf)) {
+	$null = Write-Host @"
+E: Execution Failed (file).
+E: Are You At Repository's Root Directory?
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+
+
+.\.internals\xuanqi\Start.sh.ps1 help
+if ($LASTEXITCODE -ne 0) {
+	$null = Write-Host @"
+E: Execution Failed (help).
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+
+
+$_version = .\.internals\xuanqi\Start.sh.ps1 version
+if ([string]::IsNullOrEmpty($_version)) {
+	$null = Write-Host @"
+E: Execution Failed (version).
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+$null = Remove-Variable -ErrorAction SilentlyContinue -Name _version
+
+
+$_license = .\.internals\xuanqi\Start.sh.ps1 license
+if ([string]::IsNullOrEmpty($_license)) {
+	$null = Write-Host @"
+E: Execution Failed (license).
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+$null = Remove-Variable -ErrorAction SilentlyContinue -Name _license
+
+
+$null = Write-Host "D: Completed everything."
 
 
 
 
 # report status
+$global:LASTEXITCODE = 0
 return 0

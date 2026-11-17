@@ -25,8 +25,55 @@
 
 
 
-# print demo
-1>&2 printf -- "%s\n" "Hello World, from 'Prepare'."
+# check XuanQi's health and status
+1>&2 printf -- "%s" "\
+I: Checking XuanQi's Usability...
+"
+if [ ! -x "./.internals/xuanqi/Start.sh.ps1" ]; then
+	1>&2 printf -- "%s" "\
+E: Execution Failed (file).
+E: Are You At Repository's Root Directory?
+E: Unable to Proceed.
+E: Bailing Out...
+"
+	return 1
+fi
+
+
+./.internals/xuanqi/Start.sh.ps1 help
+if [ $? -ne 0 ]; then
+	1>&2 printf -- "%s" "\
+E: Execution Failed (help).
+E: Unable to Proceed.
+E: Bailing Out...
+"
+	return 1
+fi
+
+
+_version="$(./.internals/xuanqi/Start.sh.ps1 version)"
+if [ "$_version" = "" ]; then
+	unset _version
+	1>&2 printf -- "%s" "\
+E: Execution Failed (version).
+E: Unable to Proceed.
+E: Bailing Out...
+"
+	return 1
+fi
+
+
+_license="$(./.internals/xuanqi/Start.sh.ps1 license)"
+if [ "$_license" = "" ]; then
+	unset _license
+	1>&2 printf -- "%s" "\
+E: Execution Failed (license).
+E: Unable to Proceed.
+E: Bailing Out...
+"
+	return 1
+fi
+unset _license
 
 
 

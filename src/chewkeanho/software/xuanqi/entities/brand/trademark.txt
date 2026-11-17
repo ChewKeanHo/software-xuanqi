@@ -1,0 +1,54 @@
+# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+#
+# The above unified aliases have one or more actual legal entities listed
+# outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and
+# (2) 'CONTRIBUTORS.txt'. They are located usually placed next to this document
+# in their respective project repository. Please refer to them for compiling the
+# complete list accordingly.
+#
+#
+# Zero-Clause BSD
+# ===============
+#
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose with or without fee is hereby granted.
+#
+# THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+# REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+# AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+# INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+# LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+# OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+# PERFORMANCE OF THIS SOFTWARE.
+      0000000000    0000           0000
+         000 0000                  0000
+     00 000000000   0000            00000
+     00  00000000   0000         00000000000000000000
+     000  0   000   0000  0000000000000000000000000000
+     00000000 000   0000 00000      000  000
+    00 000000 000                 000  00000
+   00         000   0000         0000  00000
+ 00         00000              00000000000
+              00    0000       0000000000
+                               00000000   00
+          00        0000           000   00000
+    00    00000     0000         00000000000000
+   000000000000000  0000         000000000 0000
+  00  0000000       0000          000       00
+00 0 0000000000
+  00   0000000      0000        00000   00000000
+  000000 00000000             000   0000000 0000
+  00 00000000       0000      00   000  00 0000
+  0000  0000000000  0000       0000000  0000000
+  00       0000000             00000 00  0
+      000           0000        0    000 0000
+       0000000      0000            00000000000000
+    0000000                000000000000000000000000
+      00000         0000    000    000 0000
+     000000000000   0000          000   0000000
+  00  0000   00000              0000      00000
+ 00   000000        0000     0000000000000000000000
+    0000000                  000   0000000    00000
+    000000000       0000      00  0000  00   00000
+     0  00  000               0000000   000000000
+      0000          0000      00000     000

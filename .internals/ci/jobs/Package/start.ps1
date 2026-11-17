@@ -1,3 +1,4 @@
+#requires -Version 5.1
 # Copyright 2026 The Automaton Project Team (https://github.com/ChewKeanHo/software-automaton)
 #
 # The above unified aliases have one or more actual legal entities listed
@@ -24,11 +25,343 @@
 
 
 
-# print demo
-$null = Write-Host "Hello World, from 'Package'."
+# make sure we are at the right location
+if (-not (Test-Path -PathType Container -LiteralPath ".internals\xuanqi")) {
+	$null = Write-Host @"
+E: Are You in the Repository's Root Directory?
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+
+
+${env:PROJECT_DIRECTORY_ROOT} = Get-Location
+${env:PROJECT_DIRECTORY_INTERNAL} = "${env:PROJECT_DIRECTORY_ROOT}\.internals"
+${env:PROJECT_DIRECTORY_BIN} = "${env:PROJECT_DIRECTORY_ROOT}\bin"
+${env:PROJECT_DIRECTORY_DOC} = "${env:PROJECT_DIRECTORY_ROOT}\share\doc\chewkeanho\software\xuanqi"
+${env:PROJECT_DIRECTORY_SRC} = "${env:PROJECT_DIRECTORY_ROOT}\src\chewkeanho\software\xuanqi"
+${env:PROJECT_DIRECTORY_LIB} = "${env:PROJECT_DIRECTORY_ROOT}\lib\chewkeanho\software\xuanqi"
+${env:PROJECT_DIRECTORY_TMP} = "${env:PROJECT_DIRECTORY_ROOT}\.local\tmp\xuanqi"
+${env:PROJECT_DIRECTORY_PKG} = "${env:PROJECT_DIRECTORY_ROOT}\pkg"
+
+
+
+
+# all good - begin mission
+${env:PACKAGE_NAME} = "chewkeanho_xuanqi"
+${env:VERSION} = .\.internals\xuanqi\Start.sh.ps1 version
+${env:VERSION} = ${env:VERSION} -replace '\r?\n\z', ''
+
+
+
+
+# checking dependencies
+$null = Write-Host @"
+I: Checking Dependencies Now...
+"@
+foreach ($____command in @("tar", "gpg", "git")) {
+	if (-not (Get-Command -Name $____command -ErrorAction SilentlyContinue)) {
+		$null = Write-Host @"
+E: '${____command}' = MISSING
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+		$global:LASTEXITCODE = 1
+		return 1
+	} else {
+		$null = Write-Host @"
+I: '${____command}' = OK
+"@
+	}
+}
+
+
+
+
+# checking GPG key availability
+$null = Write-Host @"
+I: Checking GPG Signing Key...
+"@
+$____can_gpg = $true
+$null = gpg --list-secret-keys 49B7878749107ED9C456267ACFD3316C29873FB5 2> $null
+if ($LASTEXITCODE -ne 0) {
+	$null = Write-Host @"
+I: GPG Signing Is Not Possible.
+"@
+	$____can_gpg = $false
+}
+
+
+
+
+# remove existing output directories
+$null = Write-Host @"
+I: Purging Package Workspace Now...
+"@
+foreach ($____item in @(
+	${env:PROJECT_DIRECTORY_BIN},
+	${env:PROJECT_DIRECTORY_DOC},
+	${env:PROJECT_DIRECTORY_SRC},
+	${env:PROJECT_DIRECTORY_LIB},
+	${env:PROJECT_DIRECTORY_TMP},
+	${env:PROJECT_DIRECTORY_PKG}
+)) {
+	$null = Remove-Item `
+		-Recurse `
+		-Force `
+		-LiteralPath $____item `
+		-ErrorAction SilentlyContinue
+	$null = New-Item `
+		-ItemType Directory `
+		-Force `
+		-Path $____item `
+		-ErrorAction SilentlyContinue
+}
+
+
+
+
+# package the source file now
+foreach ($____item in $(
+	@(
+		(Join-Path ${env:PROJECT_DIRECTORY_INTERNAL} "xuanqi"),
+		(Split-Path -Parent ${env:PROJECT_DIRECTORY_SRC})
+	), @(
+		(Join-Path ${env:PROJECT_DIRECTORY_INTERNAL} "xuanqi"),
+		(Split-Path -Parent ${env:PROJECT_DIRECTORY_LIB})
+	), @(
+		(Join-Path ${env:PROJECT_DIRECTORY_INTERNAL} "xuanqi"),
+		${env:PROJECT_DIRECTORY_TMP}
+	), @(
+		(Join-Path ${env:PROJECT_DIRECTORY_INTERNAL} "xuanqi\entities\i18n\help"),
+		${env:PROJECT_DIRECTORY_DOC}
+	), @(
+		(Join-Path ${env:PROJECT_DIRECTORY_INTERNAL} "xuanqi\Start.sh.ps1"),
+		(Join-Path ${env:PROJECT_DIRECTORY_BIN} "chewkeanho-xuanqi")
+	), @(
+		(Join-Path ${env:PROJECT_DIRECTORY_INTERNAL} "xuanqi\Start.sh.ps1"),
+		(Join-Path ${env:PROJECT_DIRECTORY_BIN} "chewkeanho-xuanqi.ps1")
+	)
+)) {
+	## packing goodies
+	try {
+		$null = Write-Host @"
+I: Packing '$($____item[0])'...
+"@
+
+		$null = Copy-Item -LiteralPath $____item[0] `
+				-Destination $____item[1] `
+				-Recurse `
+				-Force `
+				-ErrorAction Stop
+	} catch {
+		$null = Write-Host @"
+E: Failed to Package: '$($____item[0])' to '$($____item[1])'
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+		$global:LASTEXITCODE = 1
+		return 1
+	}
+}
+
+
+
+
+# setup binary package
+$null = Write-Host @"
+I: Configuring '${env:PROJECT_DIRECTORY_BIN}'...
+"@
+## NOTE: Windows has no executable bit. Only apply when 'chmod' exists.
+if (Get-Command -Name chmod -CommandType Application -ErrorAction SilentlyContinue) {
+	foreach ($____item in @(
+		Get-ChildItem -LiteralPath ${env:PROJECT_DIRECTORY_BIN} -Force
+	)) {
+		if ($____item.Name -clike '*.ps1') {
+			chmod -x $____item.FullName
+		} else {
+			chmod +x $____item.FullName
+		}
+	}
+}
+
+
+
+
+# package the documentation now
+foreach ($____item in @(
+	"${env:PROJECT_DIRECTORY_ROOT}\README.md",
+	"${env:PROJECT_DIRECTORY_ROOT}\REFERENCES.md",
+	"${env:PROJECT_DIRECTORY_ROOT}\LICENSE.txt",
+	"${env:PROJECT_DIRECTORY_ROOT}\CREATORS.txt",
+	"${env:PROJECT_DIRECTORY_ROOT}\CONTRIBUTORS.txt",
+	"${env:PROJECT_DIRECTORY_ROOT}\CITATION.cff",
+	"${env:PROJECT_DIRECTORY_ROOT}\AI_DECREES.md",
+	"${env:PROJECT_DIRECTORY_ROOT}\SECURITY.md"
+)) {
+	if (-not (Test-Path -PathType Leaf -LiteralPath $____item)) {
+		$null = Write-Host @"
+E: Missing Documentation Source: '${____item}'
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+		$global:LASTEXITCODE = 1
+		return 1
+	}
+
+	## filter all trademark banner off downstream
+	$null = Write-Host @"
+I: Packing '${____item}'...
+"@
+	foreach ($____line in Get-Content -Path $____item) {
+		if ($____line.Contains(".internals/trademarks/banner_1200x100.svg")) {
+			continue
+		}
+
+		$____filename = Split-Path -Leaf $____item
+		$____filename_only = $____filename.Split('.')[0]
+		$____file_extension = $____filename.Split('.')[1]
+		$____item = $____item -replace "^$([regex]::Escape(${env:PROJECT_DIRECTORY_ROOT}))\\?", ""
+
+		foreach ($____dest in @(
+			"${env:PROJECT_DIRECTORY_TMP}\${____item}",
+			"${env:PROJECT_DIRECTORY_DOC}\${____item}",
+			"${env:PROJECT_DIRECTORY_PKG}\${____filename_only}_${env:VERSION}.${____file_extension}"
+		)) {
+			try {
+				$null = Add-Content `
+					-NoNewLine `
+					-Path $____dest `
+					-Value "${____line}`n"
+			} catch {
+				$null = Write-Host @"
+E: Failed to Package: '${env:PROJECT_DIRECTORY_ROOT}\${____item}'
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+				$global:LASTEXITCODE = 1
+				return 1
+			}
+		}
+	}
+}
+
+
+
+
+# archive now
+$____pwd = Get-Location
+$null = Set-Location ${env:PROJECT_DIRECTORY_TMP}
+foreach ($____item in @(
+	"${env:PACKAGE_NAME}_${env:VERSION}_linux_all.tar.xz",
+	"${env:PACKAGE_NAME}_${env:VERSION}_linux_all.tar.gz",
+	"${env:PACKAGE_NAME}_${env:VERSION}_freebsd_all.tar.xz",
+	"${env:PACKAGE_NAME}_${env:VERSION}_freebsd_all.tar.gz",
+	"${env:PACKAGE_NAME}_${env:VERSION}_windows_all.zip"
+)) {
+	$null = Write-Host @"
+I: Archiving '${____item}'...
+"@
+
+	## equivalent of the shell's '*' glob (hidden nodes are excluded)
+	$____pkg_entries = @(
+		Get-ChildItem -LiteralPath ${env:PROJECT_DIRECTORY_TMP} -Name
+	)
+
+	switch -Wildcard -CaseSensitive ($____item) {
+	"*.tar.xz" {
+		tar -cvJf `
+			(Join-Path ${env:PROJECT_DIRECTORY_PKG} $____item) `
+			@____pkg_entries `
+			| Out-Host
+	} "*.tar.gz" {
+		tar -cvzf `
+			(Join-Path ${env:PROJECT_DIRECTORY_PKG} $____item) `
+			@____pkg_entries `
+			| Out-Host
+	} "*.zip" {
+		$null = Compress-Archive `
+			-Force `
+			-CompressionLevel Optimal `
+			-Path .\* `
+			-DestinationPath (Join-Path ${env:PROJECT_DIRECTORY_PKG} $____item)
+	}}
+
+	if ($LASTEXITCODE -ne 0) {
+		$null = Write-Host @"
+E: Failed To Archive: '${env:PROJECT_DIRECTORY_PKG}\${____item}'
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+		$global:LASTEXITCODE = 1
+		return 1
+	}
+}
+$null = Set-Location $____pwd
+
+
+
+
+# cryptographically sign each payload
+if ($____can_gpg -eq $true) {
+	## signing artifacts
+	foreach ($____item in Get-ChildItem -LiteralPath ${env:PROJECT_DIRECTORY_PKG}) {
+		### gpg-sign artifact item
+		$null = Write-Host @"
+I: GPG-Signing '${____item}'...
+"@
+		$null = gpg --armor --detach-sign $____item.FullName 2> $null
+		if ($LASTEXITCODE -ne 0) {
+			$null = Write-Host @"
+E: Execution Failed.
+E: Failed To GPG Sign: '${____item}'
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+			$global:LASTEXITCODE = 1
+			return 1
+		}
+	}
+
+
+	## export public key
+	$null = Write-Host @"
+I: Exporting GPG Public Key to '${env:PROJECT_DIRECTORY_PKG}\public-key.gpg'...
+"@
+	gpg --output "${env:PROJECT_DIRECTORY_PKG}\public-key.gpg" `
+		--export 49B7878749107ED9C456267ACFD3316C29873FB5
+	if ($LASTEXITCODE -ne 0) {
+		$null = Write-Host @"
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+		$global:LASTEXITCODE = 1
+		return 1
+	}
+}
+
+
+
+
+# clean up
+$null = Write-Host @"
+I: Cleaning Up...
+"@
 
 
 
 
 # report status
+$null = Write-Host @"
+S: Package Successful!
+"@
+$global:LASTEXITCODE = 0
 return 0
