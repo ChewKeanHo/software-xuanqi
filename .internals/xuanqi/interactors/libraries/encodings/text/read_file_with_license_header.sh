@@ -59,15 +59,15 @@ XUANQI_interactors_libraries_encodings_text_read_file_with_license_header() {
 
 
 	# execute
-	____intreactors_parse_state="license"
+	____interactors_parse_state="license"
 	____interactors_parsed_value=""
 	while IFS="" read -r ____line || [ -n "$____line" ]; do
 		case "${____line%%"#"*}" in
 		"")
-			case "$____intreactors_parse_state" in
+			case "$____interactors_parse_state" in
 			content)
-				____intreactors_parse_value="\
-${____intreactors_parse_value}${____line}
+				____interactors_parsed_value="\
+${____interactors_parsed_value}${____line}
 "
 				;;
 			*)
@@ -76,17 +76,17 @@ ${____intreactors_parse_value}${____line}
 			esac
 			;;
 		*)
-			____intreactors_parse_state="content"
-			____intreactors_parse_value="\
-${____intreactors_parse_value}${____line}
+			____interactors_parse_state="content"
+			____interactors_parsed_value="\
+${____interactors_parsed_value}${____line}
 "
 			;;
 		esac
 	done < "${1:-}"
-	unset ____line ____intreactors_parse_state
+	unset ____line ____interactors_parse_state
 
 	## output data
-	printf -- "%s" "$____intreactors_parse_value"
+	printf -- "%s" "$____interactors_parsed_value"
 	if [ $? -ne 0 ]; then
 		return 1
 	fi

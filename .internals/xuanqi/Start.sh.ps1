@@ -39,8 +39,8 @@ SETLOCAL enabledelayedexpansion
 REM configure
 WHERE powershell >nul 2>&1
 IF %ERRORLEVEL% neq 0 (
-        ECHO E: PowerShell -> ???
-        EXIT /b 1
+	ECHO E: PowerShell -> ???
+	EXIT /b 1
 )
 SET "base_name=%~n0"
 SET "source_file=%~f0"
@@ -53,8 +53,8 @@ REM execute
 IF exist "%destination_file%" GOTO :run_ps1
 COPY /y "%source_file%" "%destination_file%" >nul
 IF %ERRORLEVEL% neq 0 (
-    ECHO E: Failed to create %destination_file%.
-    EXIT /b 1
+	ECHO E: Failed to create %destination_file%.
+	EXIT /b 1
 )
 
 
@@ -63,7 +63,7 @@ powershell -NoProfile -ExecutionPolicy RemoteSigned -File "%destination_file%" %
 set "EXIT_CODE=!ERRORLEVEL!"
 
 IF EXIST "%source_file%" (
-        START /B "" cmd /c DEL "%source_file%" >nul 2>&1
+	START /B "" cmd /c DEL "%source_file%" >nul 2>&1
 )
 
 EXIT /B %EXIT_CODE%
@@ -82,9 +82,9 @@ echo \" <<'RUN_AS_POWERSHELL' >/dev/null # " | Out-Null
 # Windows POWERSHELL Codes                                                     #
 ################################################################################
 # IMPORTANT NOTICE
-# 1. Downstream ${____init_file} **MUST STRICTLY** 'return 0' (number 0) to
-#    indicate a successful happy path. Anything else including missing is
-#    failed.
+# 1.	Downstream ${____init_file} **MUST STRICTLY** 'return 0' (number 0) to
+#	indicate a successful happy path. Anything else including missing is
+#	failed.
 
 
 
@@ -102,61 +102,61 @@ ${____init_package_name} = "XuanQi"
 # Current directory - user-customized application
 ${env:XUANQI_DIRECTORY} = "$(Get-Location)\.internals\${____init_directory}\${____init_file}"
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native User Rootless Software Directory
-        ${env:XUANQI_DIRECTORY} = "$(Get-Location)\${____init_directory}\${____init_file}"
+	# Native User Rootless Software Directory
+	${env:XUANQI_DIRECTORY} = "$(Get-Location)\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native User Rootless Software Directory
-        ${env:XUANQI_DIRECTORY} = "$(Get-Location)\presenters\${____init_file}"
+	# Native User Rootless Software Directory
+	${env:XUANQI_DIRECTORY} = "$(Get-Location)\presenters\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native User Rootless Software Directory
-        ${env:XUANQI_DIRECTORY} = "${env:LOCALAPPDATA}\Programs\${____init_directory}\${____init_file}"
+	# Native User Rootless Software Directory
+	${env:XUANQI_DIRECTORY} = "${env:LOCALAPPDATA}\Programs\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native User Chocolatey Software Directory
-        ${env:XUANQI_DIRECTORY} = "${env:CHOCOLATEYINSTALL}\lib\${____init_package_name}\tools\${____init_directory}\${____init_file}"
+	# Native User Chocolatey Software Directory
+	${env:XUANQI_DIRECTORY} = "${env:CHOCOLATEYINSTALL}\lib\${____init_package_name}\tools\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native User Scoop Custom Software Directory
-        ${env:XUANQI_DIRECTORY} = "${env:SCOOP}\apps\${____init_package_name}\current\${____init_directory}\${____init_file}"
+	# Native User Scoop Custom Software Directory
+	${env:XUANQI_DIRECTORY} = "${env:SCOOP}\apps\${____init_package_name}\current\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native OS Chocolatey Software Directory
-        ${env:XUANQI_DIRECTORY} = "${env:PROGRAMDATA}\chocolatey\lib\${____init_package_name}\tools\${____init_directory}\${____init_file}"
+	# Native OS Chocolatey Software Directory
+	${env:XUANQI_DIRECTORY} = "${env:PROGRAMDATA}\chocolatey\lib\${____init_package_name}\tools\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native User Scoop Software Directory
-        ${env:XUANQI_DIRECTORY} = "${env:USERPROFILE}\scoop\apps\${____init_package_name}\current\${____init_directory}\${____init_file}"
+	# Native User Scoop Software Directory
+	${env:XUANQI_DIRECTORY} = "${env:USERPROFILE}\scoop\apps\${____init_package_name}\current\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native OS Scoop Software Directory
-        ${env:XUANQI_DIRECTORY} = "${env:SCOOP_GLOBAL}\apps\${____init_package_name}\current\${____init_directory}\${____init_file}"
+	# Native OS Scoop Software Directory
+	${env:XUANQI_DIRECTORY} = "${env:SCOOP_GLOBAL}\apps\${____init_package_name}\current\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native OS Program Files
-        ${env:XUANQI_DIRECTORY} = "${env:PROGRAMFILES}\${____init_directory}\${____init_file}"
+	# Native OS Program Files
+	${env:XUANQI_DIRECTORY} = "${env:PROGRAMFILES}\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        # Native OS Program Files (x86)
-        ${env:XUANQI_DIRECTORY} = "${env:PROGRAMFILES(x86)}\${____init_directory}\${____init_file}"
+	# Native OS Program Files (x86)
+	${env:XUANQI_DIRECTORY} = "${env:PROGRAMFILES(x86)}\${____init_directory}\${____init_file}"
 }
 
 if (-not (Test-Path ${env:XUANQI_DIRECTORY})) {
-        Write-Error @"
+	Write-Error @"
 E: Failed to Locate Init File. Bailing Out...
 
 "@
-        exit 1
+	exit 1
 }
 
 
@@ -165,12 +165,9 @@ E: Failed to Locate Init File. Bailing Out...
 # execute
 . $env:XUANQI_DIRECTORY @args
 if ($global:LASTEXITCODE -eq 0) {
-        exit 0
-} elseif (
-        ($global:LASTEXITCODE -gt 0) -or
-        ($global:LASTEXITCODE -lt 0)
-) {
-        exit $global:LASTEXITCODE
+	exit 0
+} elseif (($global:LASTEXITCODE -gt 0) -or ($global:LASTEXITCODE -lt 0)) {
+	exit $global:LASTEXITCODE
 }
 ################################################################################
 # Windows POWERSHELL Codes                                                     #
@@ -201,82 +198,82 @@ ____init_macos_directory="chewkeanho/software"
 # Native User Current Directory - User-Customized Application
 XUANQI_DIRECTORY="${PWD%/}/.internals/${____init_directory}/${____init_file}"
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        XUANQI_DIRECTORY="${PWD%/}/${____init_directory}/${____init_file}"
+	XUANQI_DIRECTORY="${PWD%/}/${____init_directory}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        XUANQI_DIRECTORY="${PWD%/}/presenters/${____init_file}"
+	XUANQI_DIRECTORY="${PWD%/}/presenters/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Native User - Linux 2nd-Generation Package
-        if ([ -d "/app" ] && [ -f "/.flatpak-info" ]); then
-                # Flatpak
-                XUANQI_DIRECTORY="/app/${____init_directory%/}/${____init_file}"
-        elif [ ! "$APPDIR" = "" ]; then
-                # AppImage
-                XUANQI_DIRECTORY="${APPDIR%/}/${____init_directory%/}/${____init_file}"
-        elif [ ! "$SNAP" = "" ]; then
-                # Snapcraft
-                XUANQI_DIRECTORY="${SNAP%/}/${____init_directory%/}/${____init_file}"
-        fi
+	# Native User - Linux 2nd-Generation Package
+	if ([ -d "/app" ] && [ -f "/.flatpak-info" ]); then
+		# Flatpak
+		XUANQI_DIRECTORY="/app/${____init_directory%/}/${____init_file}"
+	elif [ ! "$APPDIR" = "" ]; then
+		# AppImage
+		XUANQI_DIRECTORY="${APPDIR%/}/${____init_directory%/}/${____init_file}"
+	elif [ ! "$SNAP" = "" ]; then
+		# Snapcraft
+		XUANQI_DIRECTORY="${SNAP%/}/${____init_directory%/}/${____init_file}"
+	fi
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Native User Rootless Local Directory
-        XUANQI_DIRECTORY="${HOME%/}/.local/${____init_directory%/}/${____init_file}"
+	# Native User Rootless Local Directory
+	XUANQI_DIRECTORY="${HOME%/}/.local/${____init_directory%/}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Homebrew (Apple Silicon MacOS)
-        XUANQI_DIRECTORY="/opt/homebrew/${____init_directory}/${____init_file}"
+	# Homebrew (Apple Silicon MacOS)
+	XUANQI_DIRECTORY="/opt/homebrew/${____init_directory}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Linuxbrew (Homebrew on Linux)
-        XUANQI_DIRECTORY="/home/linuxbrew/.linuxbrew/${____init_directory}/${____init_file}"
+	# Linuxbrew (Homebrew on Linux)
+	XUANQI_DIRECTORY="/home/linuxbrew/.linuxbrew/${____init_directory}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Native User Rootless OPT Directory
-        XUANQI_DIRECTORY="/opt/${____init_package_name}/${____init_directory%/}/${____init_file}"
+	# Native User Rootless OPT Directory
+	XUANQI_DIRECTORY="/opt/${____init_package_name}/${____init_directory%/}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ] &&
 [ ! "${____init_macos_bundle_name%/}" = "" ] &&
 [ ! "${____init_macos_directory%/}" = "" ]; then
-        # MacOS User Rootless Local Application
-        XUANQI_DIRECTORY="${HOME}/Applications/${____init_macos_bundle_name%/}/Contents/Resources/${____init_macos_directory%/}/${____init_file}"
+	# MacOS User Rootless Local Application
+	XUANQI_DIRECTORY="${HOME}/Applications/${____init_macos_bundle_name%/}/Contents/Resources/${____init_macos_directory%/}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ] &&
 [ ! "${____init_macos_bundle_name%/}" = "" ] &&
 [ ! "${____init_macos_directory%/}" = "" ]; then
-        # MacOS OS Application
-        XUANQI_DIRECTORY="/Applications/${____init_macos_bundle_name%/}/Contents/Resources/${____init_macos_directory%/}/${____init_file}"
+	# MacOS OS Application
+	XUANQI_DIRECTORY="/Applications/${____init_macos_bundle_name%/}/Contents/Resources/${____init_macos_directory%/}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Native OS Machine-Specific & Homebrew (Intel MacOS)
-        XUANQI_DIRECTORY="/usr/local/${____init_directory%/}/${____init_file}"
+	# Native OS Machine-Specific & Homebrew (Intel MacOS)
+	XUANQI_DIRECTORY="/usr/local/${____init_directory%/}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Native OS Distributor
-        XUANQI_DIRECTORY="/usr/${____init_directory%/}/${____init_file}"
+	# Native OS Distributor
+	XUANQI_DIRECTORY="/usr/${____init_directory%/}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        # Native OS Root
-        XUANQI_DIRECTORY="/${____init_directory%/}/${____init_file}"
+	# Native OS Root
+	XUANQI_DIRECTORY="/${____init_directory%/}/${____init_file}"
 fi
 
 if [ ! -f "$XUANQI_DIRECTORY" ]; then
-        1>&2 printf "%s" "\
+	1>&2 printf "%s" "\
 E: Failed to Locate Init File. Bailing Out...
 
 "
-        exit 1
+	exit 1
 fi
 
 

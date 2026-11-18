@@ -53,35 +53,6 @@ E: Bailing Out...
 }
 
 
-$_version = .\.internals\xuanqi\Start.sh.ps1 version
-if ([string]::IsNullOrEmpty($_version)) {
-	$null = Write-Host @"
-E: Execution Failed (version).
-E: Unable to Proceed.
-E: Bailing Out...
-"@
-	$global:LASTEXITCODE = 1
-	return 1
-}
-$null = Remove-Variable -ErrorAction SilentlyContinue -Name _version
-
-
-$_license = .\.internals\xuanqi\Start.sh.ps1 license
-if ([string]::IsNullOrEmpty($_license)) {
-	$null = Write-Host @"
-E: Execution Failed (license).
-E: Unable to Proceed.
-E: Bailing Out...
-"@
-	$global:LASTEXITCODE = 1
-	return 1
-}
-$null = Remove-Variable -ErrorAction SilentlyContinue -Name _license
-
-
-$null = Write-Host "D: Completed everything."
-
-
 
 
 # report status

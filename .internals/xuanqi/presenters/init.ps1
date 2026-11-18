@@ -150,15 +150,15 @@ while ($true) {
 # execute by first parameter
 switch -CaseSensitive ($args[0]) {
 { $_ -in "-h", "help", "Help", "HELP" } {
-	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\start.ps1"
+	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\start.ps1" @args
 	$global:LASTEXITCODE = 0
 	return
 } "license" {
-	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\license\start.ps1"
+	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\license\start.ps1" @args
 	$global:LASTEXITCODE = 0
 	return
 } "version" {
-	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\version\start.ps1"
+	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\version\start.ps1" @args
 	$global:LASTEXITCODE = 0
 	return
 } default {

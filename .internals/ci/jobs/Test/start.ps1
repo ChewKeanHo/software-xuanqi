@@ -1,3 +1,4 @@
+#requires -Version 5.1
 # Copyright 2026 The Automaton Project Team (https://github.com/ChewKeanHo/software-automaton)
 #
 # The above unified aliases have one or more actual legal entities listed
@@ -24,11 +25,111 @@
 
 
 
-# print demo
-$null = Write-Host "Hello World, from 'Test'."
+# check XuanQi's health and status
+$null = Write-Host @"
+I: Checking XuanQi's Usability...
+"@
+if (-not (Test-Path -Path ".\.internals\xuanqi\Start.sh.ps1" -PathType Leaf)) {
+	$null = Write-Host @"
+E: Execution Failed (file).
+E: Are You At Repository's Root Directory?
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+
+
+
+
+$null = Write-Host @"
+I: Testing XuanQi's Help API...
+"@
+.\.internals\xuanqi\Start.sh.ps1 help
+if ($LASTEXITCODE -ne 0) {
+	$null = Write-Host @"
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+
+
+
+
+$null = Write-Host @"
+I: Testing XuanQi's License Help API...
+"@
+.\.internals\xuanqi\Start.sh.ps1 help license
+if ($LASTEXITCODE -ne 0) {
+	$null = Write-Host @"
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+
+
+
+
+$null = Write-Host @"
+I: Testing XuanQi's Version Help API...
+"@
+.\.internals\xuanqi\Start.sh.ps1 help version
+if ($LASTEXITCODE -ne 0) {
+	$null = Write-Host @"
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+
+
+
+
+$null = Write-Host @"
+I: Testing XuanQi's Version API...
+"@
+$_version = .\.internals\xuanqi\Start.sh.ps1 version
+if ([string]::IsNullOrEmpty($_version)) {
+	$null = Write-Host @"
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+$null = Remove-Variable -ErrorAction SilentlyContinue -Name _version
+
+
+
+
+$null = Write-Host @"
+I: Testing XuanQi's License API...
+"@
+$_license = .\.internals\xuanqi\Start.sh.ps1 license
+if ([string]::IsNullOrEmpty($_license)) {
+	$null = Write-Host @"
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return 1
+}
+$null = Remove-Variable -ErrorAction SilentlyContinue -Name _license
 
 
 
 
 # report status
+$global:LASTEXITCODE = 0
 return 0

@@ -51,31 +51,6 @@ E: Bailing Out...
 fi
 
 
-_version="$(./.internals/xuanqi/Start.sh.ps1 version)"
-if [ "$_version" = "" ]; then
-	unset _version
-	1>&2 printf -- "%s" "\
-E: Execution Failed (version).
-E: Unable to Proceed.
-E: Bailing Out...
-"
-	return 1
-fi
-
-
-_license="$(./.internals/xuanqi/Start.sh.ps1 license)"
-if [ "$_license" = "" ]; then
-	unset _license
-	1>&2 printf -- "%s" "\
-E: Execution Failed (license).
-E: Unable to Proceed.
-E: Bailing Out...
-"
-	return 1
-fi
-unset _license
-
-
 
 
 # report status

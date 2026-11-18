@@ -30,22 +30,24 @@ $(
 "@
 
 
+
+
 # execute
-switch -CaseSensitive ("$($args[2])") {
+switch -CaseSensitive ($args[1]) {
 "license" {
-	$null = . "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\license\start.ps1"
+	$null = . "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\license\start.ps1" @args
 	$global:LASTEXITCODE = 0
 	return
 } "version" {
-	$null = . "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\version\start.ps1"
+	$null = . "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\version\start.ps1" @args
 	$global:LASTEXITCODE = 0
 	return
 } default {
 	$null = XUANQI_interactors_libraries_os_print_info @"
 $(
 	XUANQI_interactors_responses_trademarks_get_header `
-		"${env:XUANQI_VERSION}" `
-		"${env:XUANQI_LICENSE}"
+		${env:XUANQI_VERSION} `
+		${env:XUANQI_LICENSE}
 )
 $(
 	XUANQI_interactors_libraries_encodings_text_read_file_with_license_header `
