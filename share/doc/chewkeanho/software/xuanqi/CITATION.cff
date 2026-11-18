@@ -2,12 +2,12 @@ cff-version: "1.2.0"
 type: "software"
 date-released: "2026-11-18"
 title: "(Holloway) Chew, Kean Ho's XuanQi"
-version: "1.0.0"
+version: "0.0.1"
 license: "0BSD"
 repository: "https://github.com/ChewKeanHo/software-xuanqi"
 repository-code: "https://github.com/ChewKeanHo/software-xuanqi"
 repository-artifact: "https://github.com/ChewKeanHo/software-xuanqi"
-url: "https://github.com/ChewKeanHo/software-xuanqi"
+url: "https://doi.org/10.5281/zenodo.24330972"
 contact:
   - affiliation: "(Holloway) Chew, Kean Ho"
     given-names: "Kean Ho"
@@ -67,7 +67,7 @@ authors:
     orcid: "https://orcid.org/0000-0003-4202-4863"
 identifiers:
   - type: doi
-    value: "[DOI_ID_HERE]"
+    value: "10.5281/zenodo.24330972"
     description: "(General) DOI Identifier"
   - type: other
     value: "chewkeanho-software-xuanqi"

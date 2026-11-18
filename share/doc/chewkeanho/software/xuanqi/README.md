@@ -216,7 +216,7 @@ Packaged-By: (Holloway) Chew, Kean Ho
 Contact: hello@chewkeanho.com
 SKU: chewkeanho-software-xuanqi
 UUID: A1C8B6B1-CF6F-435B-9ECE-60AA15E7240D
-DOI: Coming Soon
+DOI: 10.5281/zenodo.24330972
 License: BSD Zero Clause License (https://opensource.org/licenses/0BSD)
 Repository Made On: 2025-10-13
 Repository Made From: Malaysia, South East Asia
