@@ -1,6 +1,5 @@
 # XuanQi (周健豪·玄器) | (Holloway) Chew, Kean Ho's Software
 
-
 ```
       0000000000    0000           0000
          000 0000                  0000
@@ -35,6 +34,7 @@
      0  00  000               0000000   000000000
       0000          0000      00000     000
 ```
+
 
 *Tame the Chaos of Content Production.*
 
@@ -86,9 +86,9 @@ repository. It has:
 ## Verifying Content Integrity
 
 
-To secure the content from unauthorized modification by anyone down to bit-level
-(`0|1`), they are cryptographically signed using one or more cryptography tools
-such as but not limited to:
+To secure the content from unauthorized modification by anyone, down to the bit
+level (`0|1`), all files are cryptographically signed using one or more
+cryptography tools such as but not limited to:
 
 * [GnuPG](https://gnupg.org); AND/OR
 * [OpenSSL](https://www.openssl.org/).
@@ -100,16 +100,53 @@ keeps and maintains the private keys. To verify the content's integrity:
 
 ### GnuPG
 
-1. Install [GnuPG](https://gnupg.org) software if not present.
-2. Download the target file and its detached signature file (the `.asc` file
-   with the same filename).
-3. Download the public key file (`.gpg`).
-4. Place them next to each other in the directory.
-5. Open a terminal and execute the following command:
+You should also download the following from the same portal:
+
+1. the package's GPG/PGP detached signature (the associated `.asc` file); AND
+2. the signing public key (`public-key.gpg`)
+
+
+#### Download and Install GnuPG
+
+For GnuPG software, you can source it from the
+[GnuPG official website](https://gnupg.org/). Follow the instructions therein to
+properly install it.
+
+
+#### Confirming Key Origin
+
+The command to display the key's fingerprint is:
 
 ```
-$ gpg --no-default-keyring --keyring /path/to/public.gpg --verify /path/to/file.asc
+$ gpg --no-default-keyring --fingerprint --show-keys /path/to/public-key.gpg
 ```
+
+Then look for:
+
+```
+pub   ed25519 2020-01-13 [C]
+      49B7 8787 4910 7ED9 C456  267A CFD3 316C 2987 3FB5
+```
+
+If it matches, that means the public key is indeed from the original owner
+itself.
+
+Otherwise, treat this as a sign of tampering: switch to a new mirror and restart
+the verification.
+
+
+#### Verify the Package Integrity
+
+To verify the package integrity, the command is as follows:
+
+```
+$ gpg --no-default-keyring --keyring /path/to/public-key.gpg --verify [PACKAGE].asc [PACKAGE]
+```
+
+If GnuPG reports a good signature, the content is intact.
+
+Otherwise, the package is tainted and you **MUST** remove it at all costs. Try
+downloading from another mirror and restart the content integrity verification.
 
 
 
