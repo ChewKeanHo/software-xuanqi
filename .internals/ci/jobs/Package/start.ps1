@@ -284,11 +284,22 @@ I: Archiving '${____item}'...
 			@____pkg_entries `
 			| Out-Host
 	} "*.zip" {
-		$null = Compress-Archive `
-			-Force `
-			-CompressionLevel Optimal `
-			-Path .\* `
-			-DestinationPath (Join-Path ${env:PROJECT_DIRECTORY_PKG} $____item)
+		try {
+			$null = Compress-Archive `
+				-Force `
+				-CompressionLevel Optimal `
+				-Path .\* `
+				-DestinationPath (Join-Path ${env:PROJECT_DIRECTORY_PKG} $____item)
+		} catch {
+			$null = Write-Host @"
+E: Failed To Archive: '${env:PROJECT_DIRECTORY_PKG}\${____item}'
+E: Unable to Proceed.
+E: Bailing Out...
+
+"@
+			$global:LASTEXITCODE = 1
+			return 1
+		}
 	}}
 
 	if ($LASTEXITCODE -ne 0) {
