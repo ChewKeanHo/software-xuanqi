@@ -26,17 +26,29 @@
 
 
 # execute
+## trademark header
 XUANQI_interactors_libraries_os_print_info "\
 $( \
 	XUANQI_interactors_responses_trademarks_get_header \
 		"$XUANQI_VERSION" \
 		"$XUANQI_LICENSE" \
 )
+
+" "$XUANQI_COLOR_MODE"
+
+
+## content by language
+case "$XUANQI_LANG" in
+*)
+	# default to 'en'
+	XUANQI_interactors_libraries_os_print_info "\
 $( \
 	XUANQI_interactors_libraries_encodings_text_read_file_with_license_header \
 		"${XUANQI_DIRECTORY_ROOT}/entities/i18n/help/license/en.txt" \
 )
 " "$XUANQI_COLOR_MODE"
+	;;
+esac
 
 
 

@@ -22,13 +22,6 @@
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
 
-$null = Write-Host @"
-$(
-	XUANQI_interactors_libraries_encodings_text_read_file_with_license_header `
-		"${env:XUANQI_DIRECTORY_ROOT}\entities\i18n\help\en.txt"
-)
-"@
-
 
 
 
@@ -43,17 +36,32 @@ switch -CaseSensitive ($args[1]) {
 	$global:LASTEXITCODE = 0
 	return
 } default {
+	## trademark header
 	$null = XUANQI_interactors_libraries_os_print_info @"
 $(
 	XUANQI_interactors_responses_trademarks_get_header `
 		${env:XUANQI_VERSION} `
 		${env:XUANQI_LICENSE}
 )
+"@ ${env:XUANQI_COLOR_MODE}
+
+
+	## content by language
+	switch -CaseSensitive (${env:XUANQI_LANG}) {
+	default {
+		# default to 'en'
+		$null = XUANQI_interactors_libraries_os_print_info @"
 $(
 	XUANQI_interactors_libraries_encodings_text_read_file_with_license_header `
 		"${env:XUANQI_DIRECTORY_ROOT}\entities\i18n\help\en.txt"
 )
 
+"@ ${env:XUANQI_COLOR_MODE}
+	}}
+
+
+	## list variables for self-check
+	$null = XUANQI_interactors_libraries_os_print_info @"
 XUANQI_DIRECTORY_PWD:
 ${env:XUANQI_DIRECTORY_PWD}
 
@@ -65,7 +73,15 @@ ${env:XUANQI_DIRECTORY_ROOT}
 
 XUANQI_COLOR_MODE:
 ${env:XUANQI_COLOR_MODE}
+
+XUANQI_LANG:
+${env:XUANQI_LANG}
 "@ ${env:XUANQI_COLOR_MODE}
-	$global:LASTEXITCODE = 0
-	return
 }}
+
+
+
+
+# report status
+$global:LASTEXITCODE = 0
+return 0

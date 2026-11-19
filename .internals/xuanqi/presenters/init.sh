@@ -105,6 +105,7 @@ XUANQI_COLOR_MODE="$( \
 # configure app metadata
 XUANQI_VERSION="$(XUANQI_interactors_responses_trademarks_get_version)"
 XUANQI_LICENSE="$(XUANQI_interactors_responses_trademarks_get_license)"
+XUANQI_LANG="$(XUANQI_interactors_libraries_os_read_lang)"
 
 
 

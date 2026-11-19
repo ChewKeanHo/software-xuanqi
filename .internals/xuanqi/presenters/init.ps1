@@ -110,6 +110,7 @@ ${env:XUANQI_COLOR_MODE} = XUANQI_interactors_libraries_os_read_terminal_color_m
 # configure app metadata
 ${env:XUANQI_VERSION} = XUANQI_interactors_responses_trademarks_get_version
 ${env:XUANQI_LICENSE} = XUANQI_interactors_responses_trademarks_get_license
+${env:XUANQI_LANG} = XUANQI_interactors_libraries_os_read_lang
 
 
 
