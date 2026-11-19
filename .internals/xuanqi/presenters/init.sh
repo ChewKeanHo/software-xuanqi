@@ -21,7 +21,6 @@
 # LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
-XUANQI_LICENSE="0bsd"
 
 
 
@@ -103,8 +102,9 @@ XUANQI_COLOR_MODE="$( \
 
 
 
-# configure app version
+# configure app metadata
 XUANQI_VERSION="$(XUANQI_interactors_responses_trademarks_get_version)"
+XUANQI_LICENSE="$(XUANQI_interactors_responses_trademarks_get_license)"
 
 
 
