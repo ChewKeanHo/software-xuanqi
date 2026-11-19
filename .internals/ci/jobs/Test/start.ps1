@@ -98,6 +98,9 @@ $null = Write-Host @"
 I: Testing XuanQi's Version API...
 "@
 $_version = .\.internals\xuanqi\Start.sh.ps1 version
+$null = Write-Host @"
+I: Got '${_version}'
+"@
 if ([string]::IsNullOrEmpty($_version)) {
 	$null = Write-Host @"
 E: Execution Failed.
@@ -116,6 +119,9 @@ $null = Write-Host @"
 I: Testing XuanQi's License API...
 "@
 $_license = .\.internals\xuanqi\Start.sh.ps1 license
+$null = Write-Host @"
+I: Got '${_license}'
+"@
 if ([string]::IsNullOrEmpty($_license)) {
 	$null = Write-Host @"
 E: Execution Failed.

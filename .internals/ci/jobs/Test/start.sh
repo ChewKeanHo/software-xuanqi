@@ -94,6 +94,9 @@ fi
 I: Testing XuanQi's Version API...
 "
 _version="$(./.internals/xuanqi/Start.sh.ps1 version)"
+1>&2 printf -- "%s" "\
+I: Got '${_version}'
+"
 if [ "$_version" = "" ]; then
 	unset _version
 	1>&2 printf -- "%s" "\
@@ -111,6 +114,9 @@ fi
 I: Testing XuanQi's License API...
 "
 _license="$(./.internals/xuanqi/Start.sh.ps1 license)"
+1>&2 printf -- "%s" "\
+I: Got '${_license}'
+"
 if [ "$_license" = "" ]; then
 	unset _license
 	1>&2 printf -- "%s" "\
