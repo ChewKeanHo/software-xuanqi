@@ -46,6 +46,7 @@ PROJECT_DIRECTORY_PKG="${PROJECT_DIRECTORY_ROOT}/pkg"
 
 # all good - begin mission
 PACKAGE_NAME="chewkeanho_xuanqi"
+GPG_ID="49B7878749107ED9C456267ACFD3316C29873FB5"
 VERSION="$(${PROJECT_DIRECTORY_ROOT}/.internals/xuanqi/Start.sh.ps1 version)"
 VERSION="${VERSION%"
 "}"
@@ -54,10 +55,10 @@ VERSION="${VERSION%"
 
 
 # checking dependencies
-1>&2 printf -- "%s" "\
-I: Checking Dependencies Now...
-"
 for ____command in "tar" "zip" "gpg" "rm" "sync" "mkdir" "cp" "git"; do
+	1>&2 printf -- "%s" "\
+I: Checking '${____command}' Dependency Now...
+"
 	command -v "$____command" > /dev/null 2> /dev/null
 	if [ $? -ne 0 ]; then
 		1>&2 printf -- "%s" "\
@@ -82,9 +83,7 @@ done
 I: Checking GPG Signing Key...
 "
 ____can_gpg=true
-gpg --list-secret-keys 49B7878749107ED9C456267ACFD3316C29873FB5 \
-	> /dev/null \
-	2> /dev/null
+gpg --list-secret-keys "$GPG_ID" > /dev/null 2> /dev/null
 if [ $? -ne 0 ]; then
 	1>&2 printf -- "%s" "\
 I: GPG Signing Is Not Possible.
@@ -96,22 +95,46 @@ fi
 
 
 # remove existing output directories
-1>&2 printf -- "%s" "\
-I: Purging Package Workspace Now...
+for ____item in "$PROJECT_DIRECTORY_BIN" \
+"$PROJECT_DIRECTORY_SRC" \
+"$PROJECT_DIRECTORY_LIB" \
+"$PROJECT_DIRECTORY_DOC" \
+"$PROJECT_DIRECTORY_TMP" \
+"$PROJECT_DIRECTORY_PKG" \
+; do
+	1>&2 printf -- "%s" "\
+I: Purging '${____item}' now...
 "
-rm -rf "$PROJECT_DIRECTORY_BIN" > /dev/null 2> /dev/null
-rm -rf "$PROJECT_DIRECTORY_SRC" > /dev/null 2> /dev/null
-rm -rf "$PROJECT_DIRECTORY_LIB" > /dev/null 2> /dev/null
-rm -rf "$PROJECT_DIRECTORY_DOC" > /dev/null 2> /dev/null
-rm -rf "$PROJECT_DIRECTORY_TMP" > /dev/null 2> /dev/null
-rm -rf "$PROJECT_DIRECTORY_PKG" > /dev/null 2> /dev/null
-sync "$PROJECT_DIRECTORY_ROOT" > /dev/null 2> /dev/null
-mkdir -p "$PROJECT_DIRECTORY_BIN"
-mkdir -p "$PROJECT_DIRECTORY_SRC"
-mkdir -p "$PROJECT_DIRECTORY_LIB"
-mkdir -p "$PROJECT_DIRECTORY_DOC"
-mkdir -p "$PROJECT_DIRECTORY_TMP"
-mkdir -p "$PROJECT_DIRECTORY_PKG"
+	rm -rf "$____item" > /dev/null 2> /dev/null
+	if [ $? -ne 0 ]; then
+		1>&2 printf -- "%s" "\
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+
+"
+		return 1
+	fi
+
+	sync "${____item%/*}" > /dev/null 2> /dev/null
+	if [ $? -ne 0 ]; then
+		sync > /dev/null 2> /dev/null
+	fi
+
+	1>&2 printf -- "%s" "\
+I: Re-Creating '${____item}' now...
+"
+	mkdir -p "$____item" > /dev/null 2> /dev/null
+	if [ $? -ne 0 ]; then
+		1>&2 printf -- "%s" "\
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+
+"
+		return 1
+	fi
+done
 
 
 
@@ -124,12 +147,12 @@ while IFS="" read -r ____line || [ -n "$____line" ]; do
 
 	## packing goodies
 1>&2 printf -- "%s" "\
-I: Packing '${____line%%"|::|"*}'...
+I: Packing '${____line%%"|::|"*}' to '${____line##*"|::|"}' ...
 "
 	cp -r "${____line%%"|::|"*}" "${____line##*"|::|"}"
 	if [ $? -ne 0 ]; then
 		1>&2 printf -- "%s" "\
-E: Failed to Package: '${____line%%"|::|"*}' to '${____line##*"|::|"}'
+E: Execution Failed.
 E: Unable to Proceed.
 E: Bailing Out...
 
@@ -140,10 +163,54 @@ done<<EOF
 ${PROJECT_DIRECTORY_INTERNAL}/xuanqi|::|${PROJECT_DIRECTORY_SRC%/*}
 ${PROJECT_DIRECTORY_INTERNAL}/xuanqi|::|${PROJECT_DIRECTORY_LIB%/*}
 ${PROJECT_DIRECTORY_INTERNAL}/xuanqi|::|${PROJECT_DIRECTORY_TMP}
+${PROJECT_DIRECTORY_ROOT}/.github/workflows/git-push.yml|::|${PROJECT_DIRECTORY_TMP}/github-ci.yml
+${PROJECT_DIRECTORY_ROOT}/.gitlab/ci.yml|::|${PROJECT_DIRECTORY_TMP}/gitlab-ci.yml
 ${PROJECT_DIRECTORY_INTERNAL}/xuanqi/entities/i18n/help|::|${PROJECT_DIRECTORY_DOC}
 ${PROJECT_DIRECTORY_INTERNAL}/xuanqi/Start.sh.ps1|::|${PROJECT_DIRECTORY_BIN}/chewkeanho-xuanqi
 ${PROJECT_DIRECTORY_INTERNAL}/xuanqi/Start.sh.ps1|::|${PROJECT_DIRECTORY_BIN}/chewkeanho-xuanqi.ps1
 EOF
+
+
+
+
+# organize payloads properly
+	1>&2 printf -- "%s" "\
+I: Re-Organizing '${PROJECT_DIRECTORY_TMP}/xuanqi'...
+"
+mkdir -p "${PROJECT_DIRECTORY_TMP}/internals"
+if [ $? -ne 0 ]; then
+	1>&2 printf -- "%s" "\
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+
+"
+	return 1
+fi
+
+
+mv "${PROJECT_DIRECTORY_TMP}/xuanqi" "${PROJECT_DIRECTORY_TMP}/internals/."
+if [ $? -ne 0 ]; then
+	1>&2 printf -- "%s" "\
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+
+"
+	return 1
+fi
+
+
+mkdir -p "${PROJECT_DIRECTORY_TMP}/internals/ci"
+if [ $? -ne 0 ]; then
+	1>&2 printf -- "%s" "\
+E: Execution Failed.
+E: Unable to Proceed.
+E: Bailing Out...
+
+"
+	return 1
+fi
 
 
 
@@ -171,14 +238,17 @@ done
 
 
 # package the documentation now
-for ____item in "${PROJECT_DIRECTORY_ROOT}/README.md" \
-"${PROJECT_DIRECTORY_ROOT}/REFERENCES.md" \
-"${PROJECT_DIRECTORY_ROOT}/LICENSE.txt" \
-"${PROJECT_DIRECTORY_ROOT}/CREATORS.txt" \
-"${PROJECT_DIRECTORY_ROOT}/CONTRIBUTORS.txt" \
-"${PROJECT_DIRECTORY_ROOT}/CITATION.cff" \
+for ____item in \
 "${PROJECT_DIRECTORY_ROOT}/AI_DECREES.md" \
-"${PROJECT_DIRECTORY_ROOT}/SECURITY.md"; do
+"${PROJECT_DIRECTORY_ROOT}/CHANGELOG.md" \
+"${PROJECT_DIRECTORY_ROOT}/CITATION.cff" \
+"${PROJECT_DIRECTORY_ROOT}/CONTRIBUTORS.txt" \
+"${PROJECT_DIRECTORY_ROOT}/CREATORS.txt" \
+"${PROJECT_DIRECTORY_ROOT}/LICENSE.txt" \
+"${PROJECT_DIRECTORY_ROOT}/README.md" \
+"${PROJECT_DIRECTORY_ROOT}/REFERENCES.md" \
+"${PROJECT_DIRECTORY_ROOT}/SECURITY.md" \
+; do
 	if [ ! -f "$____item" ]; then
 		1>&2 printf -- "%s" "\
 E: Missing Documentation Source: '${____item}'
@@ -281,7 +351,7 @@ if [ "$____can_gpg" = "true" ]; then
 		1>&2 printf -- "%s" "\
 I: GPG-Signing '${____item}'...
 "
-		gpg --armor --detach-sign "$____item"
+		gpg --armor --local-user "$GPG_ID" --detach-sign "$____item"
 		if [ $? -ne 0 ]; then
 			1>&2 printf -- "%s" "\
 E: Execution Failed.
@@ -296,11 +366,13 @@ E: Bailing Out...
 
 
 	## export public key
+	### !!! IMPORTANT !!!
+	###	* DO NOT '--armor' it. Verify cannot work on armored keyring.
 	1>&2 printf -- "%s" "\
 I: Exporting GPG Public Key to '${PROJECT_DIRECTORY_PKG}/public-key.gpg'...
 "
 	gpg --output "${PROJECT_DIRECTORY_PKG}/public-key.gpg" \
-		--export 49B7878749107ED9C456267ACFD3316C29873FB5
+		--export "$GPG_ID"
 	if [ $? -ne 0 ]; then
 		1>&2 printf -- "%s" "\
 E: Execution Failed.

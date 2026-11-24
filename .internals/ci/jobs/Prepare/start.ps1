@@ -1,4 +1,3 @@
-#requires -Version 5.1
 # Copyright 2026 The Automaton Project Team (https://github.com/ChewKeanHo/software-automaton)
 #
 # The above unified aliases have one or more actual legal entities listed
@@ -25,6 +24,36 @@
 
 
 
+# check Automaton's health and status
+$null = Write-Host @"
+I: Checking Automaton's Usability...
+"@
+if (-not (Test-Path -Path ".\.internals\automaton\Start.sh.ps1" -PathType Leaf)) {
+	$null = Write-Host @"
+E: Execution Failed (file).
+E: Are You At Repository's Root Directory?
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return
+}
+
+
+.\.internals\automaton\Start.sh.ps1 help
+if ($LASTEXITCODE -ne 0) {
+	$null = Write-Host @"
+E: Execution Failed (help).
+E: Unable to Proceed.
+E: Bailing Out...
+"@
+	$global:LASTEXITCODE = 1
+	return
+}
+
+
+
+
 # check XuanQi's health and status
 $null = Write-Host @"
 I: Checking XuanQi's Usability...
@@ -37,7 +66,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 
 
@@ -49,7 +78,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 
 
@@ -57,4 +86,4 @@ E: Bailing Out...
 
 # report status
 $global:LASTEXITCODE = 0
-return 0
+return

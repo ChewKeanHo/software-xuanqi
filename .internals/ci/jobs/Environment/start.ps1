@@ -24,11 +24,14 @@
 
 
 
-# print demo
-$null = Write-Host "Hello World, from 'Environment'."
+# check powershell version
+$null = Write-Host @"
+I: Current PowerShell Version: $((Get-Host).Version.ToString())
+"@
 
 
 
 
 # report status
-return 0
+$global:LASTEXITCODE = 0
+return

@@ -1,4 +1,3 @@
-#requires -Version 5.1
 # Copyright 2026 The Automaton Project Team (https://github.com/ChewKeanHo/software-automaton)
 #
 # The above unified aliases have one or more actual legal entities listed
@@ -37,7 +36,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 
 
@@ -54,7 +53,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 
 
@@ -71,7 +70,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 
 
@@ -88,7 +87,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 
 
@@ -108,7 +107,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 $null = Remove-Variable -ErrorAction SilentlyContinue -Name _version
 
@@ -129,7 +128,7 @@ E: Unable to Proceed.
 E: Bailing Out...
 "@
 	$global:LASTEXITCODE = 1
-	return 1
+	return
 }
 $null = Remove-Variable -ErrorAction SilentlyContinue -Name _license
 
@@ -138,4 +137,4 @@ $null = Remove-Variable -ErrorAction SilentlyContinue -Name _license
 
 # report status
 $global:LASTEXITCODE = 0
-return 0
+return

@@ -25,10 +25,11 @@
 
 
 # print demo
-$null = Write-Host "%s\n" "Hello World, from 'Deploy'."
+$null = Write-Host "Hello World, from 'Deploy'."
 
 
 
 
 # report status
-return 0
+$global:LASTEXITCODE = 0
+return

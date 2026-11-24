@@ -59,9 +59,9 @@ fi
 
 
 1>&2 printf -- "%s" "\
-I: Testing XuanQi's Version Help API...
+I: Testing XuanQi's License Help API...
 "
-./.internals/xuanqi/Start.sh.ps1 help version
+./.internals/xuanqi/Start.sh.ps1 help license
 if [ $? -ne 0 ]; then
 	1>&2 printf -- "%s" "\
 E: Execution Failed.
@@ -75,9 +75,9 @@ fi
 
 
 1>&2 printf -- "%s" "\
-I: Testing XuanQi's License Help API...
+I: Testing XuanQi's Version Help API...
 "
-./.internals/xuanqi/Start.sh.ps1 help license
+./.internals/xuanqi/Start.sh.ps1 help version
 if [ $? -ne 0 ]; then
 	1>&2 printf -- "%s" "\
 E: Execution Failed.
