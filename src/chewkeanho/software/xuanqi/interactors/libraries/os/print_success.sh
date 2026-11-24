@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://doi.org/10.5281/zenodo.24331455)
 #
 # The above unified aliases have one or more actual legal entities listed
 # outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and
@@ -11,23 +11,23 @@
 # Zero-Clause BSD
 # ===============
 #
-# Permission to use, copy, modify, and/or distribute this software for any
-# purpose with or without fee is hereby granted.
+# Permission to use, copy, modify, and/or distribute this software for
+# any purpose with or without fee is hereby granted.
 #
-# THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-# REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-# AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-# INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-# LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-# OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-# PERFORMANCE OF THIS SOFTWARE.
+# THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL
+# WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE
+# FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+# DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+# AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+# OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 
 
 
 # Description:
-# `XUANQI_interactors_libraries_os_print_success` is to print a given intepreted
-# content into the terminal's STDERR console.
+# `XUANQI_interactors_libraries_os_print_success` is to print a given
+# intepreted content into the terminal's STDERR console.
 #
 # The content is printed success when color is enabled.
 # Parameters:

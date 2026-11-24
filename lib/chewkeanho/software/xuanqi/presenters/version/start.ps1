@@ -1,5 +1,4 @@
-#requires -Version 5.1
-# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://doi.org/10.5281/zenodo.24331455)
 #
 # The above unified aliases have one or more actual legal entities listed
 # outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and

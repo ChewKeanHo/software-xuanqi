@@ -210,7 +210,7 @@ DOI: 10.5281/zenodo.24331455
 License: BSD Zero Clause License (https://opensource.org/licenses/0BSD)
 Repository Made On: 2025-10-13
 Repository Made From: Malaysia, South East Asia
-Procure: https://github.com/ChewKeanHo/software-xuanqi
+Procure: https://doi.org/10.5281/zenodo.24331455
 ```
 
 

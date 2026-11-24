@@ -1,5 +1,4 @@
-#requires -Version 5.1
-# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://doi.org/10.5281/zenodo.24331455)
 #
 # The above unified aliases have one or more actual legal entities listed
 # outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and
@@ -21,7 +20,6 @@
 # LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
-${env:XUANQI_LICENSE} = "BSD-3-Clause"
 
 
 
@@ -108,8 +106,10 @@ ${env:XUANQI_COLOR_MODE} = XUANQI_interactors_libraries_os_read_terminal_color_m
 
 
 
-# configure app version
+# configure app metadata
 ${env:XUANQI_VERSION} = XUANQI_interactors_responses_trademarks_get_version
+${env:XUANQI_LICENSE} = XUANQI_interactors_responses_trademarks_get_license
+${env:XUANQI_LANG} = XUANQI_interactors_libraries_os_read_lang
 
 
 
@@ -150,16 +150,13 @@ while ($true) {
 # execute by first parameter
 switch -CaseSensitive ($args[0]) {
 { $_ -in "-h", "help", "Help", "HELP" } {
-	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\start.ps1"
-	$global:LASTEXITCODE = 0
+	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\help\start.ps1" @args
 	return
 } "license" {
-	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\license\start.ps1"
-	$global:LASTEXITCODE = 0
+	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\license\start.ps1" @args
 	return
 } "version" {
-	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\version\start.ps1"
-	$global:LASTEXITCODE = 0
+	. "${env:XUANQI_DIRECTORY_ROOT}\presenters\version\start.ps1" @args
 	return
 } default {
 	$null = XUANQI_interactors_libraries_os_print_error @"

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://doi.org/10.5281/zenodo.24331455)
 #
 # The above unified aliases have one or more actual legal entities listed
 # outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and
@@ -36,17 +36,33 @@ version)
 	return $?
 	;;
 *)
+	## trademark header
 	XUANQI_interactors_libraries_os_print_info "\
 $( \
 	XUANQI_interactors_responses_trademarks_get_header \
 		"$XUANQI_VERSION" \
 		"$XUANQI_LICENSE" \
 )
+" "$XUANQI_COLOR_MODE"
+
+
+	## content by language
+	case "$XUANQI_LANG" in
+	*)
+		# default to 'en'
+		XUANQI_interactors_libraries_os_print_info "\
 $( \
 	XUANQI_interactors_libraries_encodings_text_read_file_with_license_header \
 		"${XUANQI_DIRECTORY_ROOT}/entities/i18n/help/en.txt" \
 )
 
+" "$XUANQI_COLOR_MODE"
+		;;
+	esac
+
+
+	## list variables for self-check
+	XUANQI_interactors_libraries_os_print_info "\
 XUANQI_DIRECTORY_PWD:
 ${XUANQI_DIRECTORY_PWD}
 
@@ -58,7 +74,15 @@ ${XUANQI_DIRECTORY_ROOT}
 
 XUANQI_COLOR_MODE:
 ${XUANQI_COLOR_MODE}
+
+XUANQI_LANG:
+${XUANQI_LANG}
 " "$XUANQI_COLOR_MODE"
-	return 0
 	;;
 esac
+
+
+
+
+# report status
+return 0

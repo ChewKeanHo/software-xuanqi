@@ -1,7 +1,7 @@
 echo \" <<'RUN_AS_BATCH' >/dev/null ">NUL "\" \`" <#"
 @ECHO OFF
 REM ----------------------------------------------------------------------------
-REM Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+REM Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://doi.org/10.5281/zenodo.24331455)
 REM
 REM The above unified aliases have one or more actual legal entities listed
 REM outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and
@@ -163,10 +163,22 @@ E: Failed to Locate Init File. Bailing Out...
 
 
 # execute
-. $env:XUANQI_DIRECTORY @args
-if ($global:LASTEXITCODE -eq 0) {
-	exit 0
-} elseif (($global:LASTEXITCODE -gt 0) -or ($global:LASTEXITCODE -lt 0)) {
+try {
+	. $env:XUANQI_DIRECTORY @args
+} catch {
+	if (
+		($global:LASTEXITCODE -eq $null) -or
+		(-not ($global:LASTEXITCODE -match '^[0-9]*$'))
+	) {
+		$global:LASTEXITCODE = 1
+	}
+}
+
+if ($global:LASTEXITCODE -eq $null) {
+	exit 1
+}
+
+if ($global:LASTEXITCODE -match '^[0-9]*$') {
 	exit $global:LASTEXITCODE
 }
 ################################################################################

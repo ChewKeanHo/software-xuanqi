@@ -1,5 +1,4 @@
-#requires -Version 5.1
-# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://doi.org/10.5281/zenodo.24331455)
 #
 # The above unified aliases have one or more actual legal entities listed
 # outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and
@@ -26,20 +25,30 @@
 
 
 # execute
+## trademark header
 XUANQI_interactors_libraries_os_print_info @"
 $( `
 	XUANQI_interactors_responses_trademarks_get_header `
-		"${env:XUANQI_VERSION}" `
-		"${env:XUANQI_LICENSE}" `
+		${env:XUANQI_VERSION} `
+		${env:XUANQI_LICENSE} `
 )
+"@ ${env:XUANQI_COLOR_MODE}
+
+
+## content by language
+switch (${env:XUANQI_LANG}) {
+default {
+	XUANQI_interactors_libraries_os_print_info @"
 $( `
 	XUANQI_interactors_libraries_encodings_text_read_file_with_license_header `
 		"${env:XUANQI_DIRECTORY_ROOT}\entities\i18n\help\license\en.txt" `
 )
-"@ "${env:XUANQI_COLOR_MODE}"
+"@ ${env:XUANQI_COLOR_MODE}
+}}
 
 
 
 
 # report status
-return 0
+$global:LASTEXITCODE = 0
+return

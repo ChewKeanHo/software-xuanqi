@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://github.com/ChewKeanHo/software-xuanqi)
+# Copyright 2026 The (Holloway) Chew, Kean Ho's XuanQi Project Team (https://doi.org/10.5281/zenodo.24331455)
 #
 # The above unified aliases have one or more actual legal entities listed
 # outside of this document: (1) 'CREATORS.txt' or 'AUTHORS.txt'; and
@@ -21,7 +21,6 @@
 # LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 # OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
-XUANQI_LICENSE="0bsd"
 
 
 
@@ -103,8 +102,10 @@ XUANQI_COLOR_MODE="$( \
 
 
 
-# configure app version
+# configure app metadata
 XUANQI_VERSION="$(XUANQI_interactors_responses_trademarks_get_version)"
+XUANQI_LICENSE="$(XUANQI_interactors_responses_trademarks_get_license)"
+XUANQI_LANG="$(XUANQI_interactors_libraries_os_read_lang)"
 
 
 
@@ -138,15 +139,15 @@ done
 case "${1:-}" in
 -h|help|Help|HELP)
 	. "${XUANQI_DIRECTORY_ROOT}/presenters/help/start.sh"
-	return 0
+	return $?
 	;;
 license)
 	. "${XUANQI_DIRECTORY_ROOT}/presenters/license/start.sh"
-	return 0
+	return $?
 	;;
 version)
 	. "${XUANQI_DIRECTORY_ROOT}/presenters/version/start.sh"
-	return 0
+	return $?
 	;;
 *)
 	XUANQI_interactors_libraries_os_print_error "\
