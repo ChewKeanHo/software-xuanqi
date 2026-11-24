@@ -41,7 +41,7 @@ E: Bailing Out...
 
 
 .\.internals\automaton\Start.sh.ps1 help
-if ($LASTEXITCODE -ne 0) {
+if (($LASTEXITCODE -ne 0) -or ($global:LASTEXITCODE -ne 0)) {
 	$null = Write-Host @"
 E: Execution Failed (help).
 E: Unable to Proceed.
@@ -71,7 +71,7 @@ E: Bailing Out...
 
 
 .\.internals\xuanqi\Start.sh.ps1 help
-if ($LASTEXITCODE -ne 0) {
+if (($LASTEXITCODE -ne 0) -or ($global:LASTEXITCODE -ne 0)) {
 	$null = Write-Host @"
 E: Execution Failed (help).
 E: Unable to Proceed.

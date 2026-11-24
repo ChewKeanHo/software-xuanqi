@@ -90,12 +90,38 @@ E: 'XUANQI_interactors_libraries_runtimes_load_modules' -> ?!?!  <- Dev!!!
 	return
 }
 
-$null = . XUANQI_interactors_libraries_runtimes_load_modules `
-	"${env:XUANQI_DIRECTORY_ROOT}\entities"
-$null = . XUANQI_interactors_libraries_runtimes_load_modules `
-	"${env:XUANQI_DIRECTORY_ROOT}\views"
-$null = . XUANQI_interactors_libraries_runtimes_load_modules `
-	"${env:XUANQI_DIRECTORY_ROOT}\interactors"
+
+foreach ($_target in @(
+	(Join-Path ${env:XUANQI_DIRECTORY_ROOT} "entities"),
+	(Join-Path ${env:XUANQI_DIRECTORY_ROOT} "views"),
+	(Join-Path ${env:XUANQI_DIRECTORY_ROOT} "interactors")
+)) {
+	if (-not (Test-Path -Path $_target)) {
+		continue
+	}
+
+	$__error = . XUANQI_interactors_libraries_runtimes_load_modules $_target
+	if ($global:LASTEXITCODE -ne 0) {
+		if (-not [string]::IsNullOrEmpty($__error)) {
+			$null = Write-Host @"
+E: '${__error}' -> ?!?!  <- Dev!!!
+
+"@
+		} else {
+			$null = Write-Host @"
+E: '${_target}' -> ?!?!  <- Dev!!!
+
+"@
+		}
+
+		$null = Remove-Variable `
+			-Name _target `
+			-ErrorAction SilentlyContinue
+		$global:LASTEXITCODE = 1
+		return
+	}
+}
+$null = Remove-Variable -Name _target -ErrorAction SilentlyContinue
 
 
 

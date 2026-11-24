@@ -84,12 +84,26 @@ E: 'XUANQI_interactors_libraries_runtimes_load_modules' -> ?!?!  <- Dev!!!
 	return 1
 fi
 
-XUANQI_interactors_libraries_runtimes_load_modules \
-	"${XUANQI_DIRECTORY_ROOT}/entities"
-XUANQI_interactors_libraries_runtimes_load_modules \
-	"${XUANQI_DIRECTORY_ROOT}/views"
-XUANQI_interactors_libraries_runtimes_load_modules \
-	"${XUANQI_DIRECTORY_ROOT}/interactors"
+
+for _target in \
+"${XUANQI_DIRECTORY_ROOT}/entities" \
+"${XUANQI_DIRECTORY_ROOT}/views" \
+"${XUANQI_DIRECTORY_ROOT}/interactors" \
+; do
+	if [ ! -e "$_target" ]; then
+		continue
+	fi
+
+	1>&2 XUANQI_interactors_libraries_runtimes_load_modules "$_target"
+	if [ $? -ne 0 ]; then
+		1>&2 printf -- "\n%s" "\
+E: └── '${_target}' -> ?!?! <- Dev!!!
+"
+		unset _target
+		return 1
+	fi
+done
+unset _target
 
 
 
